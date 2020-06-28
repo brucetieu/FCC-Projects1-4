@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Technical Documentation</title>
+
+
+        <style>
+
+            body {
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                margin: 0;
+                background-color: #FFFFFF;
+            }
+            p {
+                font-size: 18px;
+            }
+
+            a {
+                text-decoration: none;
+                color:dodgerblue;
+            }
+            .flex-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .topic-selector {
+                position: fixed;
+                background-color: gainsboro; 
+                height: 100%;
+                width: 350px;
+                max-height: 100%;
+                overflow-y: scroll;
+            }
+
+            .content-container {
+                /* margin-left: auto; */
+                margin-right: auto;
+                margin-left: 400px;
+                margin-right: 100px;
+                width: auto;
+                min-width: 300px;
+
+            }
+
+            .code-div {
+                background-color: gainsboro; padding: 10px;
+            }
+
+            code {
+                background-color: gainsboro;
+            }
+
+            .note-p {
+                font-family:Georgia, 'Times New Roman', Times, serif;
+            }
+
+            .h1-sty {
+                font-size: 32px;
+            }
+
+            li {
+                font-size: 16px;
+            }
+            /* Introduction Button */
+            .dropdown-1 {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .dropbtn-1 {
+                background-color: hsl(213, 74%, 61%);
+                text-align: center;
+                border: none;
+                font-size: 18px;
+                padding: 10px 20px 10px 20px;
+                /* padding: 10px; */
+                text-decoration: none;
+                color: black;
+            }
+            .dropdown-1 .dropbtn-1:hover {background-color: hsl(213, 74%, 68%);}
+
+            /* Dropdown alignment */
+            .dropdown-2 {
+        
+                text-align: center;
+                display: table;         /* Makes the div not larger than its contents */
+                margin: 0 auto;         /* Then centers that div */
+                width: auto;
+                margin-top: 35px;
+            }
+            /* Styling of the actual button to dropdown */
+            .dropbtn-2 {
+                background-color: hsl(213, 74%, 61%);
+                text-align: center;
+                border: none;
+                font-size: 18px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                color: black;
+            }
+            /* Styling of each box in dropdown */
+            .dropdown-content2 {
+                display: none;                            /* Hide the elements of dropdown*/
+                position: relative;
+                background-color: #f1f1f1;
+                width: 100%;
+                overflow: auto;
+                /* min-width: 100px; */
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            /* Syling of actual content inside the box (the subcategories) */
+            .dropdown-content2 a {
+                color: black;
+                padding: 2.5px;
+                /* padding: 12px 16px; */
+                text-decoration: none;
+                display: block;
+            }
+            /* Change color on hover */
+            .dropdown-content2 a:hover {background-color: #ddd;}
+            /* Display dropdown on hover */
+            .dropdown-2:hover .dropdown-content2 {display: block;}
+            /* Change color of button on hover */
+            .dropdown-2:hover .dropbtn-2 {background-color: hsl(213, 74%, 68%);}
+
+            @media (max-width: 800px) {
+                .topic-selector {
+                    position: fixed;
+                    width: 100%;
+                    height: 50%;
+                    order: 1;
+                }
+
+                .flex-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .content-container {
+                    position: relative;
+                    text-align: left;
+                    width: 100%;   
+                    display: block;         /* Centers the div*/
+                    margin-left: 50px;
+                    margin-right: 50px;
+                    top: 400px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="flex-container"> 
+            
+        <!-- Div which holds the content -->
+            <div class="content-container">
+                <main id="main-doc">
+
+                    <section class="main-section" id="Introduction">
+                        <header>
+                            <h1 class="h1-sty">Introduction</h1>
+                        </header>
+
+                        <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+
+                    <h1 style="text-align: center;"> CSS Core Concepts:</h1>
+                    <ul style="text-align: center; font-size: 20px; line-height: 30px;">
+                        <li><a href="#Syntax">Syntax</a></li>
+                        <li><a href="#Specificity">Specificity</a>, <a href="#Inheritance">Inheritance</a>, <a href="#Cascade">Cascade</a></li>
+                        <!-- <li><a href="#">Units</a> and <a href="#">Values</a></li> -->
+                        <li><a href="#Box_model">Box model</a></li>
+                        <li><a href="#The_containing_block">The containing block</a></li>
+                        <!-- <li><a href="#">Stacking</a>, <a href="#">block-formatting</a></li>
+                        <li><a href="#">Initial</a>, <a href="#">computed</a>, <a href="#">used</a>, <a href="#">actual</a></li> -->
+                        <li><a href="#CSS_shorthand_properties">CSS shorthand properties</a></li>
+                        <li><a href="#CSS_flex_box_layout">CSS Flex Box Layout</a></li>
+                        <li><a href="#CSS_grid_layout">CSS Grid Layout</a></li>
+                        <li><a href="#Media_queries">Media Queries</a></li>
+                        <li><a href="#Animations">Animation</a></li>
+                    </ul>
+
+                    <div>
+                        <footer>All information taken from <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/CSS">MDN docs</a>.</footer>
+                    </div>
+
+                    </section>
+
+                    <section class="main-section" id="Syntax">
+                        <header>
+                            <h1 class="h1-sty">Syntax</h1>
+                        </header>
+                            <p>The basic goal of the Cascading Stylesheet (CSS) language is to allow a browser engine to paint elements of the page with specific features, like colors, positioning, or decorations. The CSS syntax reflects this goal and its basic building blocks are:
+
+                                The property which is an identifier, that is a human-readable name, that defines which feature is considered.
+                                The value which describe how the feature must be handled by the engine. Each property has a set of valid values, defined by a formal grammar, as well as a semantic meaning, implemented by the browser engine.
+                            </p>
+                       
+                    </section>
+
+                    <section class="main-section" id="CSS_declarations">
+                        <header>
+                            <h2>CSS declarations</h2>
+                        </header>
+
+                        <p>
+                            A property and value pair is called a <strong>declaration</strong>, and any CSS engine calculates which declarations apply to every single element of a page in order to appropriately lay it out, and to style it.
+
+                            Both properties and values are case-insensitive by default in CSS. The pair is separated by a colon, ':' (U+003A COLON), and white spaces before, between, and after properties and values, but not necessarily inside, are ignored. For example:
+                        </p>
+                        <div class="code-div">
+                        <code style="font-size: 18px;">
+                            background-color: green;
+                        </code>
+                        <p>where </p>
+                        <ul>
+                            <li><code>background-color</code> is the <strong>property</strong></li>
+                            <li><code>:</code> is the colon which separates entities</li>
+                            <li><code>green</code> is the <strong>value</strong> which turns the background into a green color</li>
+                        </ul>
+                        </div>
+                    </section>
+
+                    <section class="main-section" id="CSS_declaration_blocks">
+                        <header>
+                            <h2>CSS declaration blocks</h2>
+                        </header>
+                            <p>Declarations are grouped in <strong>blocks</strong>, that is in a structure delimited by an opening brace, '{' (U+007B LEFT CURLY BRACKET), and a closing one, '}' (U+007D RIGHT CURLY BRACKET). Blocks sometimes can be nested, so opening and closing braces must be matched.</p>
+
+                        <p>Such blocks are naturally called <strong>declaration blocks</strong> and declarations inside them are separated by a semi-colon, ';' (U+003B SEMICOLON). A declaration block may be empty, that is containing null declaration. White spaces around declarations are ignored. The last declaration of a block doesn't need to be terminated by a semi-colon, though it is often considered good style to do it as it prevents forgetting to add it when extending the block with another declaration.</p>
+
+                        <p>An example CSS declaration block is shown below.</p>
+
+                        <div class="code-div">
+                            <code style="font-size:18px;">
+                                {
+                                    background-color: green;
+                                    border-radius: 3px;
+                                }
+                            </code>
+                        </div>
+
+                        <p class="note-p"><strong>Note: </strong>The content of a CSS declaration block, that is a list of semi-colon-separated declarations, without the initial and closing braces, can be put inside an HTML style attribute.</p>
+                    </section>
+
+                    <section class="main-section" id="CSS_rulesets">
+                        <header>
+                            <h2>CSS rulesets</h2>
+                        </header>
+                        <p>If style sheets could only apply a declaration to each element of a Web page, they would be pretty useless. The real goal is to apply different declarations to different parts of the document.
+
+                            CSS allows this by associating conditions with declarations blocks. Each (valid) declaration block is preceded by one or more comma-separated selectors, which are conditions selecting some elements of the page. A selector group and an associated declarations block, together, are called a <strong>ruleset</strong>, or often simply a rule.
+                            
+                            A CSS ruleset (or rule) shown below.</p>
+
+                            <div class="code-div">
+                                <code style="font-size: 18px;">
+                                    header, p.intro {
+                                        background-color: red;
+                                        border-radius: 3px;
+                            
+                                    }
+                                </code>
+                                <p>where </p>
+
+                                <p>
+                                    <ul>
+                                        <li><code>header, p.intro </code> is the group of selectors.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                         
+
+                            <p> 
+                                As an element of the page may be matched by several selectors, and therefore by several rules potentially containing a given property several times, with different values, the CSS standard defines which one has precedence over the other and must be applied: this is called the cascade algorithm.
+                            </p>
+
+                    </section>
+                    <section class="main-section"id="CSS_statements">
+                        <header>
+                            <h2>CSS statements</h2>
+                        </header>
+                        <p>
+                            Rulesets are the main building blocks of a style sheet, which often consists of only a big list of them. But there is other information that a Web author wants to convey in the style sheet, like the character set, other external style sheets to import, font face or list counter descriptions and many more. It will use other and specific kinds of statements to do that.
+
+                            A statement is a building block that begins with any non-space characters and ends at the first closing brace or semi-colon (outside a string, non-escaped and not included into another {}, () or [] pair).
+                        </p>
+
+                        <p>
+                            There are two kinds of statements:
+                        </p>
+                            <ol><li><strong>Rulesets</strong> (or rules) that, as seen, associate a collection of CSS declarations to a condition described by a selector.</li><br>
+
+                            <li><strong>At-rules</strong> that start with an at sign, '@' (U+0040 COMMERCIAL AT), followed by an identifier and then continuing up to the end of the statement, that is up to the next semi-colon (;) outside of a block, or the end of the next block. Each type of at-rules, defined by the identifier, may have its own internal syntax, and semantics of course. They are used to convey meta-data information (like @charset or @import), conditional information (like @media or @document), or descriptive information (like @font-face).</li>
+
+                        </ol>
+                    </section>
+
+                    <section class="main-section" id="Specificity">
+                        <header>
+                            <h1 class="h1-sty">Specificity</h1>
+                        </header>
+                        <p><strong>Specificity</strong> is the means by which browsers decide which CSS property values are the most relevant to an element and, therefore, will be applied. Specificity is based on the matching rules which are composed of different sorts of CSS selectors.</p>
+
+                        <h2>Selector Types</h2>
+                        <p>The following list of selector types increases by specificity:</p>
+                        <ol>
+                        <li>Type selectors (e.g., h1) and pseudo-elements (e.g., ::before).</li>
+                        <li>Class selectors (e.g., .example), attributes selectors (e.g., [type="radio"]) and pseudo-classes (e.g., :hover).</li>
+                        <li>ID selectors (e.g., #example).</li>
+                        </ol>
+
+                        <p>
+                        Inline styles added to an element (e.g., <code>style="font-weight: bold;"</code>) always overwrite any styles in external stylesheets, and thus can be thought of as having the highest specificity. </p>
+
+                        <h2>The !important exception </h2>
+                        <p>
+                            When an <code>important</code> rule is used on a style declaration, this declaration overrides any other declarations. Although technically <code>!important</code> has nothing to do with specificity, it interacts directly with it. Using <code>!important</code>, however, is bad practice and should be avoided because it makes debugging more difficult by breaking the natural cascading in your stylesheets. When two conflicting declarations with the <code>!important</code> rule are applied to the same element, the declaration with a greater specificity will be applied.
+
+                            <p>Some rules of thumb: </p>
+                                <ul>
+                               <li> Always look for a way to use specificity before even considering <code>!important</code></li>
+                                <li>Only use <code>!important</code> on page-specific CSS that overrides foreign CSS (from external libraries, like Bootstrap or normalize.css).</li>
+                               <li> Never use <code>!important</code> when you're writing a plugin/mashup.</li>
+                               <li> Never use <code>!important</code> on site-wide CSS.</li>
+                                </ul>
+
+                        </p>
+                    </section>
+
+                    <section class="main-section"id="Inheritance">
+                        <header>
+                            <h1 class="h1-sty">Inheritance</h1>
+                        </header>
+                        <h2> Inherited properties</h2>
+                        <p>
+                            In CSS, inheritance controls what happens when no value is specified for a property on an element. </p>
+
+                           <p> CSS properties can be categorized in two types: </p>
+                            <ol>
+                                <li><strong>inherited</strong> properties, which by default are set to the <a href="#">computed value</a> of the parent element</li>
+                                <li><strong>non-inherited</strong> properties, which by default are set to <a href="#">initial value</a> of the property</li>
+                                </ol>
+                        </p>
+
+                        <p>
+                            When no value for an inherited property has been specified on an element, the element gets the <a href="#">computed value</a> of that property on its parent element. Only the root element of the document gets the <a href="#">initial value</a> given in the property's summary.
+
+                            A typical example of an inherited property is the <code>color</code> property. Given the style rules:
+                            </p>
+                            <div class="code-div">
+                                <code style="font-size: 18px;">
+                                    p { color: green; }
+                                </code>
+                            </div>
+                            
+                            <p>and the markup:</p>
+
+                            <div class="code-div">
+                                <code style="font-size: 18px;" >
+                                    &ltp&gtThis paragraph has &ltem&gtemphasized text&lt/em&gt in it.&lt/p&gt
+                                </code>
+                            </div>
+
+                            <p>... the words "emphasized text" will appear green, since the <code>em</code> element has inherited the value of the <code>color</code> property from the p element. It does not get the initial value of the property (which is the color that is used for the root element when the page specifies no color).</p>
+                        
+                            <h2> Non-inherited properties</h2>
+                        <p>When no value for a <strong>non-inherited property</strong> has been specified on an element, the element gets the initial value of that property (as specified in the property's summary).
+
+                            A typical example of a non-inherited property is the <code>border</code> property. Given the style rules:</p>
+
+                            <div class="code-div">
+                                <code style="font-size: 18px;">
+                                    p { border: medium solid; }
+                                </code>
+                            </div>
+                            
+                            <p>and the markup:</p>
+
+                            <div class="code-div">
+                                <code style="font-size: 18px;">
+                                    &ltp&gtThis paragraph has &ltem&gtemphasized text&lt/em&gt in it.&lt/p&gt
+                                </code>
+                            </div>
+
+                            <p>... the words "emphasized text" will not have a border (since the initial value of border-style is none).</p>
+                    </section>
+
+                    <section class="main-section" id="Cascade">
+                        <header>
+                            <h1 class="h1-sty">Cascade</h1>
+                        </header>
+                        <p>
+                            The <strong>cascade</strong> is an algorithm that defines how to combine property values originating from different sources. It lies at the core of CSS, as emphasized by the name: Cascading Style Sheets. This article explains what the cascade is, the order in which CSS declarations cascade, and how this affects you, the web developer. Visit <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade">the Cascade</a> for a more detailed look.
+                        </p>
+                    </section>
+
+                    <section class="main-section" id="CSS_values_and_units">
+                        <header>
+                            <h1 class="h1-sty">CSS values and units</h1>
+                        </header>
+                        <p>
+                            Every CSS declaration includes a property / value pair. Depending on the property, the value can include a single integer or keyword, to a series of keywords and values with or without units. There are a common set of data types -- values and units -- that CSS properties accept. Below is an overview of most of these data types. Refer to the page for each value type for more detailed information.
+                        </p>
+
+                        <h2 id="Textual_data_types">Textual data types</h2>
+                        <ul>
+                            <li><code>
+                                &lt custom-indent &gt
+                            </code></li>
+                            <li>Pre-defined keywords as <code>&lt ident &gt</code></li>
+                            <li><code>
+                                &lt string &gt 
+                            </code></li>
+                            <li><code>&lt url &gt</code></li>
+                        </ul>
+
+                        <h2 id="Numeric_data_types">Numeric data types</h2>
+                        <ul>
+                            <li><code>
+                                &lt integer &gt
+                            </code></li>
+                            <li><code>&lt number &gt</code></li>
+                            <li><code>
+                                &lt dimension &gt 
+                            </code></li>
+                            <li><code>&lt percentage &gt</code></li>
+                        </ul>
+                    </section>
+
+                    <section class="main-section" id="Box_model">
+                        <header>
+                            <h1 class="h1-sty">Box model</h1>
+                        </header>
+
+                        <p>
+                            When laying out a document, the browser's rendering engine represents each element as a rectangular box according to the standard <strong>CSS basic box model</strong>. CSS determines the size, position, and properties (color, background, border size, etc.) of these boxes.
+                        </p>
+                        <p>
+                            Every box is composed of four parts (or areas), defined by their respective edges: the content edge, padding edge, border edge, and margin edge. </p>
+                            <figure>
+                            <img style="max-width: 100%; height: auto;" src="boxmodel.jpg" alt="box">
+                            <figcaption>Basic CSS box model</figcaption>
+                            </figure>
+                        
+                            <p>
+                                The <strong>content area</strong>, bounded by the content edge, contains the "real" content of the element, such as text, an image, or a video player. Its dimensions are the content width (or content-box width) and the content height (or content-box height). It often has a background color or background image.
+                            </p>
+                            <p>
+                                If the <code>box-sizing</code> property is set to <code>content-box</code> (default) and if the element is a block element, the content area's size can be explicitly defined with the <code>width</code>, <code>min-width</code>, <code>max-width</code>, <code>height</code>, <code>min-height</code>, and <code>max-height</code> properties.
+                            </p>
+                            <p>
+                                The <strong>padding area</strong>, bounded by the padding edge, extends the content area to include the element's padding. Its dimensions are the padding-box width and the padding-box height.
+                            </p>
+                            <p>
+                                The thickness of the padding is determined by the <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>, and shorthand <code>padding</code> properties. </p>
+
+                                <p>
+                                The <strong>border area</strong>, bounded by the border edge, extends the padding area to include the element's borders. Its dimensions are the border-box width and the border-box height.</p>
+
+                                <p>
+                                The thickness of the borders are determined by the <code>border-width</code> and shorthand <code>border</code> properties. If the <code>box-sizing</code> property is set to <code>border-box</code>, the border area's size can be explicitly defined with the <code>width</code>, <code>min-width</code>, <code>max-height</code>, <code>height</code>, <code>min-height</code>, and <code>max-height</code> properties. When there is a background (background-color or background-image) set on a box, it extends to the outer edge of the border (i.e. extends underneath the border in z-ordering). This default behavior can be altered with the <code>background-clip</code> css property.</p>
+
+                                <p>
+                                The <strong>margin-area</strong>, bounded by the margin edge, extends the border area to include an empty area used to separate the element from its neighbors. Its dimensions are the margin-box width and the margin-box height. </p>
+
+                                <p>
+                                The size of the margin area is determined by the <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>, and shorthand <code>margin</code> properties. When margin collapsing occurs, the margin area is not clearly defined since margins are shared between boxes. </p>
+                                
+                                <p>Finally, note that for non-replaced inline elements, the amount of space taken up (the contribution to the height of the line) is determined by the line-height property, even though the borders and padding are still displayed around the content.</p>
+                            </p>
+                    </section>
+
+                    <section class="main-section" id="The_containing_block">
+                        <header>
+                            <h1 class="h1-sty">The containing block</h1>
+                        </header>
+
+                        <p>
+                            The size and position of an element are often impacted by its <strong>containing</strong> block. Most often, the containing block is the content area of an element's nearest block-level ancestor, but this is not always the case. In this article, we examine the factors that determine an element's containing block.</p>
+                            <p>When a user agent (such as your browser) lays out a document, it generates a box for every element. Each box is divided into four areas:</p>
+                            <ol>
+                                <li>Content area</li>
+                                <li>Padding area</li>
+                                <li>Border area</li>
+                               <li> Margin area</li>
+                                </ol>
+                        </p>
+                        <h2 id="Identifying">Identifying the containing block</h2>
+
+                        <p>The process for identifying the containing block depends entirely on the value of the element's <code>position</code> property </p>
+                        <ol>
+                            <li>If the <code>position</code> property is <code>static</code>, <code>relative</code>, or <code>sticky</code>, the containing block is formed by the edge of the <em>content box</em> of the nearest ancestor element that is either a <strong>block container</strong>> (such as an inline-block, block, or list-item element) or establishes a <strong>formatting context</strong> (such as a table container, flex container, grid container, or the block container itself).</li> <br>
+                            <li>If the <code>position</code> property is <code>absolute</code>, the containing block is formed by the edge of the <em>padding</em> box of the nearest ancestor element that has a <code>position</code> value other than <code>static</code> (<code>fixed</code>, <code>absolute</code>, <code>relative</code>, or <code>sticky</code>).</li> <br>
+                            <li>If the <code>position</code> property is <strong>fixed</strong>, the containing block is established by the viewport (in the case of continuous media) or the page area (in the case of paged media).</li> <br>
+                            <li>If the <code>position</code> property is <code>absolute</code> or <code>fixed</code>, the containing block may also be formed by the edge of the <em>padding box</em> of the nearest ancestor element that has the following: 
+                                <ol>
+                                    <br>
+                                    <li>A transform or perspective value other than none</li>
+                                    <li>A will-change value of transform or perspective</li>
+                                    <li>A filter value other than none or a will-change value of filter (only works on Firefox).</li>
+                                    <li>A contain value of paint (e.g. contain: paint;)</li>
+                                </ol>
+                            </li>
+                        </ol>
+
+                    </section>
+
+                    <section class="main-section" id="CSS_shorthand_properties">
+                        <header>
+                            <h1 class="h1-sty">CSS shorthand properties</h1>
+                        </header>
+
+                        <p><strong>Shorthand properties</strong> are CSS properties that let you set the values of multiple other CSS properties simultaneously. Using a shorthand property, you can write more concise (and often more readable) style sheets, saving time and energy.
+                        </p>
+                        
+                        <p>
+                            The CSS specification defines shorthand properties to group the definition of common properties acting on the same theme. For instance, the CSS <code>background</code> property is a shorthand property that's able to define the values of <code>background-color</code>, <code>background-image</code>, <code>background-repeat</code>, and <code>background-position</code>. Similarly, the most common font-related properties can be defined using the shorthand font, and the different margins around a box can be defined using the <code>margin</code> shorthand.
+                        </p>
+
+                        <h2 id="Background_properties">Background properties</h2>
+                        <p>A background with the following properties ...</p>
+                        <div class="code-div">
+                            <code>background-color: #000;</code> <br>
+                            <code>background-image: url(images/bg.gif);</code> <br>
+                            <code>background-repeat: no-repeat;</code> <br>
+                            <code>background-position: left top;</code>
+                        </div>
+                        <p>... can be shortened to just one declaration:</p>
+                        <div class="code-div">
+                            <code>background: #000 url(images/bg.gif) no-repeat left top;</code>
+                        </div>
+
+                        <h2 id="Font_properties">Font properties</h2>
+                        <p>The following declarations ...</p>
+                        <div class="code-div">
+                            <code>font-style: italic;</code> <br>
+                            <code>font-weight: bold;</code> <br>
+                            <code>font-size: .8em;</code> <br>
+                            <code>line-height: 1.2;</code>
+                            <code>font-family: Arial, sans-serif;</code>
+                        </div>
+                        <p>... can be shortened to:</p>
+                        <div class="code-div">
+                            <code>font: italic bold .8em/1.2 Arial, sans-serif;</code>
+                        </div>
+
+                        <h2 id="Border_properties">Border properties</h2>
+                        <p>With borders, the width, color, and style can be simplified into one declaration. For example, the following CSS ...</p>
+                        <div class="code-div">
+                            <code>border-width: 1px;</code> <br>
+                            <code>border-style: solid;</code> <br>
+                            <code>border-color: #000;</code> <br>
+    
+                        </div>
+                        <p>... can be shortened to:</p>
+                        <div class="code-div">
+                            <code>border: 1px solid #000;</code>
+                        </div>
+
+                        <h2 id="Margin_and_padding">Margin and padding properties</h2>
+                        <p>Shorthand versions of margin and padding values work similarly; the margin property allows for shorthand values to be specified using one, two, three, or four values. The following CSS declarations ...</p>
+                        <div class="code-div">
+                            <code>margin-top: 10px;</code> <br>
+                            <code>margin-right: 5;</code> <br>
+                            <code>margin-bottom: 10;</code> <br>
+                            <code>margin-left: 5px;</code>
+    
+                        </div>
+                        <p>... are the same as the following declaration using the four value shorthand. Note that the values are in clockwise order, beginning at the top: top, right, bottom, then left (TRBL, the consonants in "trouble").</p>
+                        <div class="code-div">
+                            <code>margin: 10px 5px 10px 5px;</code>
+                        </div>
+
+                        <p>Margin shorthand rules for one, two, three and four value declarations are:</p>
+
+                        <ul>
+                            <li>When <strong>one</strong> value is specified, it applies the same margin to <strong>all four sides</strong>.</li> <br>
+                            <li>When <strong>two</strong> values are specified, the first margin applies to the <strong>top and bottom</strong>, the second to the <strong>left and right</strong>.</li> <br>
+                            <li>When <strong>three</strong> values are specified, the first margin applies to the <strong>top</strong>, the second to the <strong>left and right</strong>, the third to the <strong>bottom</strong>.</li> <br>
+                            <li>When <strong>four</strong> values are specified, the margins apply to the <strong>top, right, bottom</strong>, and <strong>left</strong> in that order (clockwise).</li>
+                        </ul>
+
+                        <h2 id="universal">The universal shorthand property</h2>
+                        <p>CSS provides a universal shorthand property, <code>all</code>, which applies its value to every property in the document. Its purpose is to change the properties' inheritance model to one of:</p>
+                        <p><code>inherit</code>: Sets the property value applied to a selected element to be the same as that of its parent element. Effectively, this "turns on inheritance".</p>
+                        <p><code>initial</code>: Sets the property value applied to a selected element to the initial value of that property.</p>
+                        <p><code>unset</code>: Resets the property to its natural value, which means that if the property is naturally inherited it acts like <code>inherit</code>, otherwise it acts like <code>initial</code>.</p>
+                    </section>
+
+                    <section class="main-section" id="CSS_flex_box_layout">
+                        <header>
+                            <h1 class="h1-sty">CSS flex box layout</h1>
+                        </header>
+
+                        <p>
+                            <strong>CSS Flexible Box Layout</strong> is a module of CSS that defines a CSS box model optimized for user interface design, and the layout of items in one dimension. In the flex layout model, the children of a flex container can be laid out in any direction, and can “flex” their sizes, either growing to fill unused space or shrinking to avoid overflowing the parent. Both horizontal and vertical alignment of the children can be easily manipulated.
+                        </p>
+                        <h2 id="Basic_example">Basic example</h2>
+                        <p>In the following example a container has been set to <code>display:f flex</code>, which means that the three child items become flex items. The value of <code>justify-content</code> has been set to <code>space-between</code> in order to space the items out evenly on the main axis. An equal amount of space is placed between each item with the left and right items being flush with the edges of the flex container. You can also see that the items are stretching on the cross axis, due to the default value of <code>align-items</code> being <code>stretch</code>. The items stretch to the height of the flex container, making them each appear as tall as the tallest item.</p>
+
+                        <figure>
+                            <img style="max-width: 100%; height: auto;" src="flexbox.jpg" alt="flex-box">
+                        </figure>
+                        <h2 id="Reference">Reference</h2>
+                        <p>See <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout">reference</a> for more information.</p>
+                    </section>
+
+                    <section class="main-section" id="CSS_grid_layout"> 
+                        <header>
+                            <h1>CSS grid layout </h1>
+                        </header>
+                        <p>
+                            <strong>CSS Grid Layout</strong> excels at dividing a page into major regions or defining the relationship in terms of size, position, and layer, between parts of a control built from HTML primitives.</p>
+                            <p>
+                            Like tables, grid layout enables an author to align elements into columns and rows. However, many more layouts are either possible or easier with CSS grid than they were with tables. For example, a grid container's child elements could position themselves so they actually overlap and layer, similar to CSS positioned elements.
+                        </p>
+                        <h2 id="Grid-reference">Reference</h2>
+                        <p>See <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">reference</a> for more information.</p>
+                    </section>
+
+                    <section class="main-section" id="Media_queries">
+                        <header>
+                            <h1>Media queries</h1>
+                        </header>
+                        <p>The <code>@media</code> CSS at-rule can be used to apply part of a style sheet based on the result of one or more media queries. With it, you specify a media query and a block of CSS to apply to the document if and only if the media query matches the device on which the content is being used.</p>
+
+                        <h2 id="media-syntax">Syntax</h2>
+                        <p>The <code>@media</code> at-rule may be placed at the top level of your code or nested inside any other conditional group at-rule.</p>
+
+                        <div class="code-div">
+                            <code>/* At the top level of your code */</code> <br> <br>
+                            <code> @media screen and (min-width: 900px) {</code> <br>
+                            <code>  article {</code>
+                                <code>padding: 1rem 3rem;</code>
+                                <code>}</code> <br>
+                                <code>}</code>
+                        </div>
+                    </section>
+
+                    <section class="main-section" id="Animation">
+                        <header>
+                            <h1 class="h1-sty">Animation</h1>
+                        </header>
+
+                        <p>The <strong><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation#Examples">animation</a></strong> <a href="#CSS_shorthand_properties">shorthand CSS property</a> applies an animation between styles. It is a shorthand for <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code>, <code>animation-delay</code>, <code>animation-iteration-count</code>, <code>animation-direction</code>, <code>animation-fill-mode</code> and <code>animation-play-state</code>.</p>
+                    </section>
+                </main>
+            </div>
+            <!-- Div for the topic selector on the left -->
+            <nav id="navbar" class="topic-selector">
+                <header>
+                <h1 style="text-align: center;"><a href="#Introduction">CSS Reference</a></h1> <hr>
+                </header>
+                
+                <div class="dropdown-1">
+                    <a href="#Introduction" class="nav-link dropbtn-1"> Introduction</a> 
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#Syntax" class="nav-link dropbtn-2"> Syntax</a>
+                    <div class="dropdown-content2">
+                        <a class="nav-link" href="#CSS_declarations">CSS declarations</a>
+                        <a class="nav-link" href="#CSS_declaration_blocks">CSS declaration blocks</a>
+                        <a class="nav-link" href="#CSS_rulesets">CSS rulesets</a>
+                        <a class="nav-link" href="#CSS_statements">CSS statements</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#Specificity" class="dropbtn-2"> Specificity, Inheritance, Cascade</a>
+                    <div class="dropdown-content2">
+                        <a class="nav-link" href="#Specificity">Specificity</a>
+                        <a class="nav-link"href="#Inheritance">Inheritance</a>
+                        <a class="nav-link"href="#Cascade">Cascade</a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#CSS_values_and_units" class="nav-link dropbtn-2"> CSS Values and Units</a>
+                    <div class="dropdown-content2">
+                        <a  href="#Textual_data_types">Textual data types</a>
+                        <a href="#Numeric_data_types">Numeric data types </a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#Box_model" class="dropbtn-2"> Box model</a>
+                    <div class="dropdown-content2">
+                        <a class="nav-link" href="#Box_model">Box model</a>
+                        <!-- <a href="#Margin_collapse">Margin collapse </a> -->
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#The_containing_block" class=" nav-link dropbtn-2"> The Containing Block</a>
+                    <div class="dropdown-content2">
+                        <!-- <a href="#">Effects of containing block</a> -->
+                        <a href="#Identifying">Identifying the containing block </a>
+                    </div>
+                </div>
+
+                <!-- <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Stacking and block formatting</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Stacking</a>
+                        <a href="#">Block formatting</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Initial, computed, used, actual</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Initial value</a>
+                        <a href="#">Computed value </a>
+                        <a href="#">Used value </a>
+                        <a href="#">Actual value </a>
+                    </div>
+                </div> -->
+
+                <div class="dropdown-2">
+                    <a href="#CSS_shorthand_properties" class=" nav-link dropbtn-2"> CSS Shorthand properties</a>
+                    <div class="dropdown-content2">
+                        <!-- <a href="#">Tricky edge cases</a> -->
+                        <a  href="#Background_properties">Background properties </a>
+                        <a  href="#Font_properties">Font properties</a>
+                        <a  href="#Border_properties">Border properties  </a>
+                        <a  href="#Margin_and_padding">Margin and padding properties  </a>
+                        <a  href="#universal">Universal shorthand properties  </a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#CSS_flex_box_layout" class="nav-link dropbtn-2"> CSS flex box layout</a>
+                    <div class="dropdown-content2">
+                        <a href="#Basic_example">Basic example</a>
+                        <a href="#Reference">Reference  </a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#CSS_grid_layout" class=" nav-link dropbtn-2"> CSS grid layout</a>
+                    <div class="dropdown-content2">
+                        <!-- <a href="#Grid-ex">Basic example</a> -->
+                        <a href="#Grid-ref">Reference  </a>
+                        <!-- <a href="#">Guides</a>
+                        <a href="#">External Resources  </a>
+                        <a href="#">Specifications  </a> -->
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#Media_queries" class="nav-link dropbtn-2"> Media queries</a>
+                    <div class="dropdown-content2">
+                        <a href="#media-syntax">Syntax</a>
+                        <!-- <a href="#">Guides  </a>
+                        <a href="#">Specifications  </a> -->
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#Animation" class=" nav-link dropbtn-2"> Animation</a>
+                    <div class="dropdown-content2">
+                        <!-- <a href="#">Syntax</a>
+                        <a href="#">Examples  </a>
+                        <a href="#">Accesibility concerns  </a>
+                        <a href="#">Specifications  </a>
+                        <a href="#">Browser compatibility  </a> -->
+                    </div>
+                </div>
+                </header>
+                
+
+
+            
+            </nav>
+            
+        </div>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>

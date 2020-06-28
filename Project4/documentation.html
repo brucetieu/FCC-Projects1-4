@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Insert title here</title>
+
+
+        <style>
+
+            body {
+                margin: 0;
+                background-color: #FFFFFF;
+            }
+            p {
+                font-size: 18px;
+            }
+
+            li a {
+                text-decoration: none;
+                color:dodgerblue;
+            }
+            .flex-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .topic-selector {
+                position: fixed;
+                background-color: gainsboro; 
+                height: auto;
+                width: 300px;
+                max-height: 100%;
+                overflow: scroll;
+            }
+
+            .content-container {
+                margin-left: 330px;
+                margin-right: 100px;
+                /* width: 65%; */
+
+            }
+
+            /* Introduction Button */
+            .dropdown-1 {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .dropbtn-1 {
+                background-color: hsl(213, 74%, 61%);
+                text-align: center;
+                border: none;
+                font-size: 18px;
+                padding: 10px 20px 10px 20px;
+                /* padding: 10px; */
+                text-decoration: none;
+                color: black;
+            }
+            .dropdown-1 .dropbtn-1:hover {background-color: hsl(213, 74%, 68%);}
+
+            /* Dropdown alignment */
+            .dropdown-2 {
+        
+                text-align: center;
+                display: table;         /* Makes the div not larger than its contents */
+                margin: 0 auto;         /* Then centers that div */
+                width: auto;
+                margin-top: 35px;
+            }
+            /* Styling of the actual button to dropdown */
+            .dropbtn-2 {
+                background-color: hsl(213, 74%, 61%);
+                text-align: center;
+                border: none;
+                font-size: 18px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                color: black;
+            }
+            /* Styling of each box in dropdown */
+            .dropdown-content2 {
+                display: none;                            /* Hide the elements of dropdown*/
+                position: relative;
+                background-color: #f1f1f1;
+                width: 100%;
+                overflow: auto;
+                /* min-width: 100px; */
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            /* Syling of actual content inside the box (the subcategories) */
+            .dropdown-content2 a {
+                color: black;
+                padding: 2.5px;
+                /* padding: 12px 16px; */
+                text-decoration: none;
+                display: block;
+            }
+            /* Change color on hover */
+            .dropdown-content2 a:hover {background-color: #ddd;}
+            /* Display dropdown on hover */
+            .dropdown-2:hover .dropdown-content2 {display: block;}
+            /* Change color of button on hover */
+            .dropdown-2:hover .dropbtn-2 {background-color: hsl(213, 74%, 68%);}
+
+            @media (max-width: 800px) {
+                .topic-selector {
+                    position: fixed;
+                    width: 100%;
+                    height: 50%;
+                    order: 1;
+                }
+
+                .flex-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .content-container {
+                    position: relative;
+                    text-align: center;   
+                    display: block;         /* Centers the div*/
+                    margin-left: auto;
+                    margin-right: auto;
+                    top: 400px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="flex-container"> 
+            
+        <!-- Div which holds the content -->
+            <div class="content-container">
+                <!-- <main id="main-doc"> -->
+                    <h1 style="text-align: center"id="introduction">Introduction</h1>
+                    <p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+
+                    <h1 style="text-align: center;"> CSS Core Concepts:</h1>
+                    <ul style="text-align: center; font-size: 20px; line-height: 30px;">
+                        <li><a href="#">Syntax</a></li>
+                        <li><a href="#">Specificity</a>, <a href="#">Inheritance</a>, <a href="#">Cascade</a></li>
+                        <li><a href="#">Units</a> and <a href="#">Values</a></li>
+                        <li><a href="#">Box Model</a>, <a href="#">margin collapse</a></li>
+                        <li>The <a href="#">Containing Block</a></li>
+                        <li><a href="#">Stacking</a>, <a href="#">block-formatting</a></li>
+                        <li><a href="#">Initial</a>, <a href="#">computed</a>, <a href="#">used</a>, <a href="#">actual</a></li>
+                        <li><a href="#">Shorthand properties</a></li>
+                        <li><a href="#">CSS Flex Box Layout</a></li>
+                        <li><a href="#">CSS Grid Layout</a></li>
+                        <li><a href="#">Media Queries</a></li>
+                        <li><a href="#">Animations</a></li>
+                    </ul>
+
+                    <div>
+                        <footer>All information taken from MDN docs.</footer>
+                    </div>
+                <!-- </main> -->
+
+
+            </div>
+            <!-- Div for the topic selector on the left -->
+            <div class="topic-selector">
+                <h1 style="text-align: center;">CSS Reference</h1> <hr>
+
+                <div class="dropdown-1">
+                    <a href="#introduction" class="dropbtn-1"> Introduction</a> 
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="syntax.html" class="dropbtn-2"> Syntax</a>
+                    <div class="dropdown-content2">
+                        <a href="syntax.html#declaration">CSS declarations</a>
+                        <a href="#">CSS declaration blocks</a>
+                        <a href="#">CSS rulesets</a>
+                        <a href="#">CSS statements</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Specificity, Inheritance, Cascade</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Specificity</a>
+                        <a href="#">Inheritance</a>
+                        <a href="#">Cascade</a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> CSS Units and Values</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Textual data types</a>
+                        <a href="#">Numeric data types </a>
+                        <a href="#">Specifications</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Box model, margin collapse</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Box model</a>
+                        <a href="#">Margin collapse </a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> The Containing Block</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Effects of containing block</a>
+                        <a href="#">Identifying the containing block </a>
+                        <a href="#">Calculating percentages </a>
+                        <a href="#">Some examples </a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Stacking and block formatting</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Stacking</a>
+                        <a href="#">Block formatting</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Initial, computed, used, actual</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Initial value</a>
+                        <a href="#">Computed value </a>
+                        <a href="#">Used value </a>
+                        <a href="#">Actual value </a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Shorthand properties</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Tricky edge cases</a>
+                        <a href="#">Background properties </a>
+                        <a href="#">Font properties</a>
+                        <a href="#">Border properties  </a>
+                        <a href="#">Margin and padding properties  </a>
+                        <a href="#">Universal shorthand properties  </a>
+                    </div>
+                </div>
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> CSS flex box layout</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Basic example</a>
+                        <a href="#">Reference  </a>
+                        <a href="#">Guides</a>
+                        <a href="#">Specifications  </a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> CSS grid layout</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Basic example</a>
+                        <a href="#">Reference  </a>
+                        <a href="#">Guides</a>
+                        <a href="#">External Resources  </a>
+                        <a href="#">Specifications  </a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Media queries</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Reference</a>
+                        <a href="#">Guides  </a>
+                        <a href="#">Specifications  </a>
+                    </div>
+                </div>
+
+
+                <div class="dropdown-2">
+                    <a href="#" class="dropbtn-2"> Animation</a>
+                    <div class="dropdown-content2">
+                        <a href="#">Syntax</a>
+                        <a href="#">Examples  </a>
+                        <a href="#">Accesibility concerns  </a>
+                        <a href="#">Specifications  </a>
+                        <a href="#">Browser compatibility  </a>
+                    </div>
+                </div>
+
+        
+
+
+            
+            </div>
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#128046 Deadstock Drip</title>
+
+    <style>
+        /* Make all content within the body completely flush against the page */
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: #D3C5C9;
+        } 
+
+        /* <nav> CSS */
+        #nav-bar {
+            position: fixed;            /* Nav bar always at top */
+            top: 0px;
+            left: 0px;
+            width: 100%;                /* Nav bar as wide as can be */
+            background: gainsboro;
+            display: flex;              /* Place elements in a flex container*/
+            align-items: center;        /* Make it center horizontally */
+            flex-direction: row;        /* flex container aligned in rows */                    
+            flex-wrap: wrap;            /* flex items break into multiple lines */
+
+        }
+
+        /* Class to allow spacing between divs */
+        div.div-spacing {
+            margin: 15px;
+        }
+
+
+        /* Logo */
+        #company {
+            font-size: 28px;
+            /* font-family: 'Courier New', Courier, monospace; */
+        }
+
+        /* Navbar element 1 */
+        #features {
+            margin-left: auto;
+            font-size: 20px;
+        }
+
+        /* Navbar element 2 */
+        #pricing {
+            font-size: 20px;
+        }
+
+        /* Navbar element 3 */
+        #howto {
+            font-size: 20px;
+            /* margin-right: 20px; */
+        }
+
+        /* Make elements grow on hover with transform: scale() */
+        .div-spacing:hover {
+            transform: scale(1.1);
+        }
+
+        #form-info {
+            margin-top: 100px;
+        }
+
+        /* Styling of the input box */
+        .input-sty {
+            background-color: hsl(36, 100%, 57%);
+            margin-top: 15px;
+            padding: 5px;  
+            width: 25%;
+            max-width: 100%;  
+            text-align: center;
+        }
+
+        /* Styling of the features of the product */
+        .feature-div {
+            /* position: relative;
+            top: 100px; */
+            display: flex;
+            align-items: center;        /* center items within flex container */
+            flex-direction: row;        /* items place in a row */
+            flex-wrap: wrap;            /* wrap onto multiple lines if too wide */
+            justify-content: center;    /* center flex container within browser */
+            margin: 50px;               /* spacing between each flex container */
+            text-align: center;
+            /* max-width: 100%; */
+        }
+
+        /* .alignment {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        } */
+
+        /* Putting products in a flex container */
+        .outer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Titles of each card */
+        .item-div {
+            background-color: #98777b;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Description of each feature (for the water droplet) */
+        div.override {
+            text-align: left;
+            margin: 10px;
+            width: 50%;
+        }
+
+        /* Align all text to be centered in the div */
+        .video-div {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Width of the video */
+        #video {
+            max-width: 100%;
+        }
+
+
+        
+
+        /* Create the card which stores each shoe */
+        .card {
+            border: 1px solid gray;
+            box-shadow: 2px 2px 2px 1px lightsteelblue;
+            margin: 10px;
+            width: 300px;
+            height: 350px;
+            /* padding: 150px; */
+        }
+
+        /* Remove the underline from the hyperlink */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .hover:hover {
+            animation-name: background-colored;
+            animation-duration: 500ms;
+            animation-fill-mode: forwards;
+            transform: scale(1.1);
+        }
+        @keyframes background-colored {
+            100% {
+                background-color: hsl(166, 62%, 64%);
+            }
+        }
+
+        #submit:hover {
+            animation-name: background-color;
+            animation-duration: 500ms;
+            animation-fill-mode: forwards;
+            transform: scale(1.1);
+        }
+        @keyframes background-color {
+            100% {
+                background-color: hsl(48, 78%, 51%);
+            }
+        }
+        /* When screen is less than 600 pixels, apply these styles to make everything fit on screen  */
+        @media(max-width: 600px) {
+            /* Nav bar elements should stack on top of each other via flex-wrap: wrap */
+            .div-spacing {
+                text-align: center;
+                width: 100%;
+                max-width: 100%;
+            }
+            /* order: sets the order to lay out an item in a flex or grid container. 1 comes first. */
+
+            /* Icon image */
+            #icon-div {
+                order: 1;
+                margin-top: 10px;       
+            }
+            /* Company link */
+            #company {
+                order: 2;
+                margin-top: -10px;      /* Negative element is added so that the droplet 
+                                        is closer to the text*/
+            /* Feature link */
+            }
+            #features {
+                order: 3;
+                margin-top: -10px;
+            }
+            /* Pricing link */
+            #pricing {
+                order: 4;
+                margin-top: -10px;
+            }
+            /* How It Works link */
+            #howto {
+                order: 5;
+                margin-top: -10px;
+            }
+
+            /* Water droplet icon */
+            #drip {
+                order: 1;
+            } 
+
+            /* Resize GET STARTED button when page gets too small */
+            #submit {
+                width: auto;
+                max-width: 100%;
+            }
+            /* .feature-div {
+                margin: 0;
+            } */
+
+            /* The text next to each water droplet */
+            div.override {
+                order: 2;
+                text-align: center;
+                margin-top: -150px;
+                
+            }
+            /* #form-info {
+                margin-top: 100px;
+            } */
+
+            /* The header is 200px away from the top of the page */
+            h2 {
+                margin-top: 150px;
+            }
+            /* The main header shows up when page is small */
+            h1 {
+                margin-top: 250px;
+            }
+        } 
+
+    </style>
+</head>
+
+<body>
+    <!-- Create the nav-bar which goes inside the header tag -->
+    <header id="header">
+        <!-- <h2>Insert catchy motto here.</h2> -->
+        <nav id="nav-bar">
+            <!-- text-decoration: none: remove the underline from the link
+                color: inherit: inherit the color of the parent element, which is black -->
+                <!-- div for the icon -->
+            <div class="div-spacing" id="icon-div">
+                <!-- <span style="font-size: 300%;">&#128046;</span> -->
+                <img id="header-img" src="cow.jpg" alt="icon" width="55" height="55">
+            </div>
+
+            <!-- Container for "company" nav link -->
+            <div class="div-spacing" id="company">
+                <a class="nav-link" href="#form" style="text-decoration: none; color: #484848;">Deadstock Drip</a> 
+            </div>
+            
+            <!-- Container for "features" nav link -->
+            <div class="div-spacing" id="features">
+                <a class="nav-link" href="#drip" style="text-decoration: none; color: #484848;">Features</a> 
+            </div>
+
+            <!-- Container for "pricing" nav-link -->
+            <div class="div-spacing" id="pricing">
+                <a class="nav-link" href="#prices" style="text-decoration: none; color: #484848;">Pricing</a> 
+            </div>
+
+            <!-- Container for "pricing" nav-link -->
+            <div class="div-spacing" id="howto">
+                <a class="nav-link" href="#video" style="text-decoration: none; color: #484848;">Concept</a>  
+            </div> 
+        </nav>
+
+        <!-- Email inside a container -->
+        <div id="form-info" style="text-align: center;">
+            <h1 style="font-size: 36px; font-family:Georgia, 'Times New Roman', Times, serif;">Stylish streetwear that makes you feel good.</h1>
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                <input style="font-size: 18px;" id="email" type="email" name="email" placeholder="Email Address" required><br>
+                <input style="font-size: 20px; max-width: 100%;" id="submit" class="input-sty" type="submit" value="GET STARTED">
+            </form>
+        </div>
+
+        <!-- Details about the product -->
+        <!-- Water droplet 1 -->
+        <div class="feature-div">
+            <div><img style="margin-right: 20px;" id="drip" src="water.png" alt="drip" width="120" height="120"></div>
+            <div class="override">
+            <h2> Achieve the highest of drip with high quality materials </h2> 
+            <p style="margin-top: -15px; font-size: 18px;">All products are made with non-gildan materials</p>
+            </div>
+        </div>
+
+        <!-- Water droplet 2 -->
+        <div class="feature-div">
+            <div><img style="margin-right: 20px;" id="comfort" src="deadstock.jpg" alt="drip" width="120" height="120"></div>
+            <div class="override">
+            <h2> Flex on your friends and family with deadstock clothes </h2> 
+            <p style="margin-top: -15px; font-size: 18px">"You didn't ask, but I just wanted to tell you that these shoes are deadstock!" </p>
+            </div>
+        </div>
+
+        <!-- Water droplet 3 -->
+        <div class="feature-div">
+            <div><img style="margin-right: 20px;" id="return" src="refund.jpg" alt="drip" width="120" height="120"></div>
+            <div class="override">
+            <h2> Money back guarantee  </h2> 
+            <p style="margin-top: -15px; font-size: 18px">Not enough style for you? Return within 30 days for 100% of your money back (This will rarely happen).</p>
+            </div>
+        </div>
+
+
+        <!-- Video of the product -->
+        <div class="video-div">
+            <iframe id="video" allowfullscreen height="400" width="500" src="https://www.youtube.com/embed/h05HWNThXpY"></iframe>
+        </div>
+
+        <!-- Three shoes arranged in a row -->
+        <div class="outer" id="prices">
+
+            <div class="card">
+                <div class="item-div">
+                    <h3>CHUNKY DUNKY SB'S</h3>
+                </div>
+                <img style="margin-left: auto; margin-right: auto; display: block;" src="chunky.jpg" alt="chunky" width="300" height="200">
+                <a class="hover" href="https://stockx.com/nike-sb-dunk-low-ben-jerrys-chunky-dunky" target="_blank"
+                     style="text-align: center; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; width: 150px; height: 25px; background-color:hsl(148, 64%, 70%); border-radius: 5px; font-size: 18px;">BUY: $1800</a>
+            </div>
+
+            <div class="card">
+                <div class="item-div">
+                    <h3>NIKE SACAI</h3>
+                </div>
+                <img style="margin-left: auto; margin-right: auto; display: block;" src="sacai.jpg" alt="sacai" width="300" height="200">
+                <a class="hover" href="https://stockx.com/search/sneakers?s=nike%20ld%20waffle" target="_blank"
+                     style="text-align: center; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; width: 150px; height: 25px; background-color:hsl(148, 64%, 70%); border-radius: 5px; font-size: 18px;">BUY: $500</a>
+            </div>
+
+            <div class="card">
+                <div class="item-div">
+                    <h3>NIKE SB TRAVIS SCOTT</h3>
+                </div>
+                <img style="margin-left: auto; margin-right: auto; display: block;" src="travis.jpg" alt="sacai" width="300" height="200">
+                <a class="hover" href="https://stockx.com/nike-sb-dunk-low-travis-scott" target="_blank"
+                style="text-align: center; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; width: 150px; height: 25px; background-color:hsl(148, 64%, 70%); border-radius: 5px; font-size: 18px;">BUY: $1500</a>
+            </div>
+        </div>
+    </header>
+
+    <script src="//cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

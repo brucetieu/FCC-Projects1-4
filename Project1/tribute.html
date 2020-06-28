@@ -1,0 +1,174 @@
+
+
+<!-- 
+
+Hello Camper!
+
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+<!DOCTYPE html>
+
+<!-- This will set the viewport of your page, which will give the browser instructions on how to control the page's dimensions and scaling. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<html>
+  <head>
+    <title id="title"> Fredrick Douglass </title>
+
+    <style>
+        #h1-sty {
+            text-align: center;
+            margin-top: 45px;
+        }
+        #h5-sty {
+            text-align: center;
+            margin-top: -25px;
+        }
+
+        /* A 3 x 1 grid */
+        #container {
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+            grid-column-gap: 10px;
+            margin-top: 40px;
+            margin-left: 50px;
+            margin-bottom: 20px;
+            margin-right: 50px;
+        }
+        .item1 {
+            background: whitesmoke;
+        }
+        .item2 {
+            background: gainsboro;
+        }
+        .item3 {
+            background: gainsboro;
+        }
+
+
+        #image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .h3-style {
+            text-align: center;
+        }
+        h4 {
+            text-align: center;
+        }
+        .p-sty{
+            text-align: center;
+            margin-left: 25px;
+            margin-right: 25px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: silver;
+        }
+
+        li {
+            line-height: 25px;
+            margin-right: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 18px;
+        }
+
+    </style>
+  </head>
+
+  
+  <body>
+      <h1 id="h1-sty">Frederick Douglass</h1>
+      <h5 id="h5-sty">(c. 1818 - 1895) </h5>
+    <div id="container">
+        <div class="item1">
+            <div id="img-div">
+                <img id="image" src="FredDoug.JPG" alt="Frederick Douglass">
+                <figcaption style="text-align: center;" id="img-caption"> <em> Frederick Douglass</em> </figcaption>
+
+                <h3 class="h3-style"> FUN FACTS </h3>
+                    <hr size="1">
+
+                    <p class="p-sty">#1</p>
+                    <p class="p-sty">One of the reasons we celebrate Black History Month in February is because of Frederick Douglass.</p>
+
+                    <hr size="1">
+                    <p class="p-sty">#2</p>
+                    <p class="p-sty">Douglass was the most photographed American of the 19th century, sitting more for more portraits than Abraham Lincoln.</p>
+
+                    <hr size="1">
+                    <p class="p-sty">#3</p>
+                    <p class="p-sty">Douglass was the only African American to attend the First Women’s Rights Convention.</p>
+
+                    <hr size="1">
+                    <p class="p-sty">#4</p>
+                    <p class="p-sty">Douglass was the first African American to receive a vote for president at a major political party convention.</p>
+
+                    <hr size="1">
+                    <p class="p-sty">#5</p>
+                    <p class="p-sty">Douglass was also the first African American to receive a vice presidential nomination.</p>
+                <footer style="text-align: center;">Source: <a target="_blank" href=https://www.npca.org/articles/1736-10-facts-you-might-not-know-about-frederick-douglass-in-honor-of-his-200th>ncpa</a></footer>
+            </div>
+        </div>
+    
+        <div class="item2" id="tribute-info">
+            <main id="main">
+                <h3 class="h3-style">BIOGRAPHY</h3>
+            <h4> Who was Frederick Douglass?</h4>
+
+            <p class="p-sty">Frederick Douglass was an excaped slave who became a civil rights activist. He became a leader in the abolition movement, a movement to end slavery once and for all. He was also an advocate for women's rights as he believed woman should be given the rights to vote.
+            </p>
+
+            <h4>Escape from Slavery</h4>
+            <p class="p-sty">Douglass had tried to escape from slavery countless of times before but to no avail. It wasn't until Douglass was able to leave Covey's farm in 1838 and boarded a train to Havre De Grace, Maryland, that he was free. He then travelled through Delaware and finally to <a target="_blank" href=https://www.newenglandhistoricalsociety.com/david-ruggles-the-go-to-conductor-on-the-underground-railroad/>David Ruggles'</a> safe house. </p>
+
+            <h4>From Slave to Abolitionist Leader</h4>
+            <p class="p-sty"> The journey to becoming an Abolitionist leader began when Douglass was asked to share his story at the meetings of the Abolitionist Movement. By 1843, Douglass had become part of the American Anti-Slavery Society's “Hundred Conventions” project, a six-month tour through the United States.  </p>
+
+            <h4>Publications</h4>
+            <p class="p-sty">After returning from the tour, Douglass produced some abolitionist newspapers: The North Star, Frederick Douglass Weekly, Frederick Douglass' Paper, Douglass' Monthly and New National Era. In 1845, Douglass wrote and published his first autobiography, Narrative of the Life of Frederick Douglass, an American Slave, in 1845. </p>
+
+            <h4>Civil War and Reconstruction</h4>
+            <p class="p-sty">
+                By the time of the Civil War, Douglass was one of the most famous black men in the country. He even conferred with <a target="_blank" href="https://www.history.com/topics/us-presidents/abraham-lincoln">President Abraham Lincoln</a> regarding the poor treatment of black soldiers and <a target="_blank" href="https://www.biography.com/us-president/andrew-jackson">Andrew Jackson</a> on the topic of <a href="https://en.wikipedia.org/wiki/Black_suffrage" target="_blank">black suffrage</a> 
+            </p>
+            <p class="p-sty"> More information about Frederick Douglass can be found <a id="tribute-link" target="_blank" href=https://www.biography.com/activist/frederick-douglass>here</a>
+
+
+            </main>
+        </div>
+        <div class="item3">
+            <h3 class="h3-style">TIMELINE</h3>
+            <ul>
+            <li><strong>1818</strong>: Frederick Douglass is born a slave in Talbot County, Maryland. </li> <br>
+            <li><strong>1826</strong>: Sophia Auld, wife of Hugh Auld, taught Douglass the alphabet. Douglass is determined to learn how to read and write.</li><br>
+            <li><strong>1830</strong>: Douglass discovered the book <em>The Colombian Orator</em> which gave him the concept of freedom and human rights.</li><br>
+            <li><strong>1835</strong>: Douglass devised ways to escape from slavery, but his plot was discovered.</li><br>
+            <li><strong>1838</strong>: Douglass successfully escapes from slavery using the underground railroad.</li><br>
+            <li><strong>1841</strong>: Douglass Speaks at Massachusetts Anti-Slavery Society Convention.</li><br>
+            <li><strong>1854</strong>: Douglass publishes <em>Narrative of the Life of Frederick Douglass.</em></li><br>
+            <li><strong>1848</strong>: Douglass begins sheltering escaped slaves fleeing North. Participates in first Women’s Rights Convention in Seneca Falls, New York.</li><br>
+            <li><strong>1855</strong>: Douglass publishes second autobiography - <em>My Bondage and My Freedom.</em></li><br>
+            <li><strong>1877</strong>: Douglass is appointed U.S Marshall of the District of Columbia.</li><br>
+            <li><strong>1884</strong> Douglass marries a white women, Helen Pitts.</li><br>
+            <li><strong>1893</strong>: Douglass delivers speech at the World's Fair.</li><br>
+            <li><strong>1895</strong>: Douglass dies of a heart attack while speaking at the National Council of Women in Washington, D.C.</li><hr size='1' style="margin-right: 50px;">
+            <p style="margin-right: 20px;"><em>"There is no negro problem. The problem is whether the American people have loyalty enough, honor enough, patriotism enough, to live up to their own constitution.”</em> </p>
+            - Frederick Douglass
+
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
