@@ -1,0 +1,191 @@
+body {
+    margin: 0px;
+}
+.img-bg {
+    /* position: absolute;
+    z-index: 0;             The image is last on the stack
+    opacity: .5;
+    height: auto;
+    max-width: 100%; */
+    position: fixed;      /* HAVE TO USED FIXED POSITIONING SO IMAGE STAYS ON SCREEN NO MATTER THE SIZE*/
+    /* display: flex; */
+    opacity: .9;
+    background-image: url("../static/gym.jpg");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 50px;
+    z-index: 1;             /* Header info is second on the stack */
+    color: black;
+}
+
+/* form div 1 */
+/* .form-div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 250px;
+    background-color: whitesmoke;
+    color: black;
+    border: 1px;
+    opacity: 0.5;
+    z-index: 2;
+
+} */
+
+.form-div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    width: 750px;
+    max-width: 100%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 175px;
+    background-color: whitesmoke;
+    color: black;
+    border: 1px;
+    opacity: 0.5;
+    z-index: 2;             /* The form card is third on the stack */
+
+}
+/* 
+.content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px black; */
+    /* background-color: black;
+    width: 500px;
+    height: 500px;
+    z-index: 3; */
+    
+/* }  */
+
+.more-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 750px;
+    max-width: 100%;
+    height: 500px;
+    text-align: center;
+    margin-top: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: whitesmoke; */
+    overflow-y: scroll;
+    /* overflow: hidden; */
+    z-index: 3;                             /* Then there's a card identically placed over the card, except now
+                                                it's the most recent on the stack so opacity doesn't overlap with the text*/
+    
+}
+
+form
+{
+    /* Center the form */
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    text-align: left;
+    max-width: 100%;
+    
+}
+
+.input-sty {
+
+    margin-top: 10px;    /* Spacing for top of input boxes from one another */   
+    margin-bottom: 15px; /* Spacing for bottom of input boxes from one another */
+    font-size: 18px;    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 500px;        /* Width of input box */
+    max-width: 100%;
+}
+
+/* Label CSS styles */
+.label-sty {
+    font-size: 18px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 100%;
+}
+
+/* Font inside textbox */
+#goals {
+    font-size: 18px;
+}
+
+/* Text box */
+textarea {
+    padding: 10px;          /* How large the text box will be */
+    width: 500px;           /* How wide the text box is */
+    resize: none;           /* Don't allow user to resize the box*/
+    border-radius: 5px;     /* Make box corners more round */
+    margin-bottom: 40px;    /* Spacing from the next question */
+
+}
+
+h1 {
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+select {
+    font-size: 16px;
+}
+
+#submit {
+    font-size: 16px;
+}
+
+/* Resize the form when the screen is small */
+@media (max-width: 600px) {
+    /* Make width of input box smaller */
+    .input-sty {
+    margin-top: 10px;    /* Spacing for top of input boxes from one another */   
+    margin-bottom: 15px; /* Spacing for bottom of input boxes from one another */
+    font-size: 18px;    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 250px;        /* Width of input box */
+    max-width: 100%;
+    }
+    /* Make text box smaller */
+    textarea {
+        padding: 10px;          /* How large the text box will be */
+        width: 250px;           /* How wide the text box is */
+        resize: none;           /* Don't allow user to resize the box*/
+        border-radius: 5px;     /* Make box corners more round */
+        margin-bottom: 40px;    /* Spacing from the next question */
+
+    }
+    /* Center form */
+    form
+    {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        text-align: center;
+        max-width: 100%;
+    }
+}

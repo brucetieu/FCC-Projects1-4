@@ -2,152 +2,7 @@
 <html>
     <head>
         <title>CSS Technical Documentation</title>
-
-
-        <style>
-
-            body {
-                font-family:Georgia, 'Times New Roman', Times, serif;
-                margin: 0;
-                background-color: #FFFFFF;
-            }
-            p {
-                font-size: 18px;
-            }
-
-            a {
-                text-decoration: none;
-                color:dodgerblue;
-            }
-            .flex-container {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .topic-selector {
-                position: fixed;
-                background-color: gainsboro; 
-                height: 100%;
-                width: 350px;
-                max-height: 100%;
-                overflow-y: scroll;
-            }
-
-            .content-container {
-                /* margin-left: auto; */
-                margin-right: auto;
-                margin-left: 400px;
-                margin-right: 100px;
-                width: auto;
-                min-width: 300px;
-
-            }
-
-            .code-div {
-                background-color: gainsboro; padding: 10px;
-            }
-
-            code {
-                background-color: gainsboro;
-            }
-
-            .note-p {
-                font-family:Georgia, 'Times New Roman', Times, serif;
-            }
-
-            .h1-sty {
-                font-size: 32px;
-            }
-
-            li {
-                font-size: 16px;
-            }
-            /* Introduction Button */
-            .dropdown-1 {
-                text-align: center;
-                margin-top: 20px;
-            }
-            .dropbtn-1 {
-                background-color: hsl(213, 74%, 61%);
-                text-align: center;
-                border: none;
-                font-size: 18px;
-                padding: 10px 20px 10px 20px;
-                /* padding: 10px; */
-                text-decoration: none;
-                color: black;
-            }
-            .dropdown-1 .dropbtn-1:hover {background-color: hsl(213, 74%, 68%);}
-
-            /* Dropdown alignment */
-            .dropdown-2 {
-        
-                text-align: center;
-                display: table;         /* Makes the div not larger than its contents */
-                margin: 0 auto;         /* Then centers that div */
-                width: auto;
-                margin-top: 35px;
-            }
-            /* Styling of the actual button to dropdown */
-            .dropbtn-2 {
-                background-color: hsl(213, 74%, 61%);
-                text-align: center;
-                border: none;
-                font-size: 18px;
-                padding: 10px 20px 10px 20px;
-                text-decoration: none;
-                color: black;
-            }
-            /* Styling of each box in dropdown */
-            .dropdown-content2 {
-                display: none;                            /* Hide the elements of dropdown*/
-                position: relative;
-                background-color: #f1f1f1;
-                width: 100%;
-                overflow: auto;
-                /* min-width: 100px; */
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-            /* Syling of actual content inside the box (the subcategories) */
-            .dropdown-content2 a {
-                color: black;
-                padding: 2.5px;
-                /* padding: 12px 16px; */
-                text-decoration: none;
-                display: block;
-            }
-            /* Change color on hover */
-            .dropdown-content2 a:hover {background-color: #ddd;}
-            /* Display dropdown on hover */
-            .dropdown-2:hover .dropdown-content2 {display: block;}
-            /* Change color of button on hover */
-            .dropdown-2:hover .dropbtn-2 {background-color: hsl(213, 74%, 68%);}
-
-            @media (max-width: 800px) {
-                .topic-selector {
-                    position: fixed;
-                    width: 100%;
-                    height: 50%;
-                    order: 1;
-                }
-
-                .flex-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                }
-                .content-container {
-                    position: relative;
-                    text-align: left;
-                    width: 100%;   
-                    display: block;         /* Centers the div*/
-                    margin-left: 50px;
-                    margin-right: 50px;
-                    top: 400px;
-                }
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="../static/styles.css">
     </head>
 
     <body>
@@ -658,9 +513,9 @@
                     <a href="#Introduction" class="nav-link dropbtn-1"> Introduction</a> 
                 </div>
 
-                <div class="dropdown-2">
-                    <a href="#Syntax" class="nav-link dropbtn-2"> Syntax</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#Syntax" class="nav-link"> Syntax</a>
+                    <div class="dropdown-content">
                         <a class="nav-link" href="#CSS_declarations">CSS declarations</a>
                         <a class="nav-link" href="#CSS_declaration_blocks">CSS declaration blocks</a>
                         <a class="nav-link" href="#CSS_rulesets">CSS rulesets</a>
@@ -668,9 +523,9 @@
                     </div>
                 </div>
 
-                <div class="dropdown-2">
-                    <a href="#Specificity" class="dropbtn-2"> Specificity, Inheritance, Cascade</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#Specificity"> Specificity, Inheritance, Cascade</a>
+                    <div class="dropdown-content">
                         <a class="nav-link" href="#Specificity">Specificity</a>
                         <a class="nav-link"href="#Inheritance">Inheritance</a>
                         <a class="nav-link"href="#Cascade">Cascade</a>
@@ -678,25 +533,25 @@
                 </div>
 
 
-                <div class="dropdown-2">
-                    <a href="#CSS_values_and_units" class="nav-link dropbtn-2"> CSS Values and Units</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#CSS_values_and_units" class="nav-link"> CSS Values and Units</a>
+                    <div class="dropdown-content">
                         <a  href="#Textual_data_types">Textual data types</a>
                         <a href="#Numeric_data_types">Numeric data types </a>
                     </div>
                 </div>
 
-                <div class="dropdown-2">
-                    <a href="#Box_model" class="dropbtn-2"> Box model</a>
-                    <div class="dropdown-content2">
-                        <a class="nav-link" href="#Box_model">Box model</a>
+                <div class="dropdown">
+                    <a href="#Box_model" class="nav-link"> Box model</a>
+                    <div class="dropdown-content">
+                        <!-- <a class="nav-link" href="#Box_model">Box model</a> -->
                         <!-- <a href="#Margin_collapse">Margin collapse </a> -->
                     </div>
                 </div>
 
-                <div class="dropdown-2">
-                    <a href="#The_containing_block" class=" nav-link dropbtn-2"> The Containing Block</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#The_containing_block" class="nav-link"> The Containing Block</a>
+                    <div class="dropdown-content">
                         <!-- <a href="#">Effects of containing block</a> -->
                         <a href="#Identifying">Identifying the containing block </a>
                     </div>
@@ -720,9 +575,9 @@
                     </div>
                 </div> -->
 
-                <div class="dropdown-2">
-                    <a href="#CSS_shorthand_properties" class=" nav-link dropbtn-2"> CSS Shorthand properties</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#CSS_shorthand_properties" class=" nav-link"> CSS Shorthand properties</a>
+                    <div class="dropdown-content">
                         <!-- <a href="#">Tricky edge cases</a> -->
                         <a  href="#Background_properties">Background properties </a>
                         <a  href="#Font_properties">Font properties</a>
@@ -732,18 +587,18 @@
                     </div>
                 </div>
 
-                <div class="dropdown-2">
-                    <a href="#CSS_flex_box_layout" class="nav-link dropbtn-2"> CSS flex box layout</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#CSS_flex_box_layout" class="nav-link"> CSS flex box layout</a>
+                    <div class="dropdown-content">
                         <a href="#Basic_example">Basic example</a>
                         <a href="#Reference">Reference  </a>
                     </div>
                 </div>
 
 
-                <div class="dropdown-2">
-                    <a href="#CSS_grid_layout" class=" nav-link dropbtn-2"> CSS grid layout</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#CSS_grid_layout" class=" nav-link"> CSS grid layout</a>
+                    <div class="dropdown-content">
                         <!-- <a href="#Grid-ex">Basic example</a> -->
                         <a href="#Grid-ref">Reference  </a>
                         <!-- <a href="#">Guides</a>
@@ -753,9 +608,9 @@
                 </div>
 
 
-                <div class="dropdown-2">
-                    <a href="#Media_queries" class="nav-link dropbtn-2"> Media queries</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#Media_queries" class="nav-link"> Media queries</a>
+                    <div class="dropdown-content">
                         <a href="#media-syntax">Syntax</a>
                         <!-- <a href="#">Guides  </a>
                         <a href="#">Specifications  </a> -->
@@ -763,9 +618,9 @@
                 </div>
 
 
-                <div class="dropdown-2">
-                    <a href="#Animation" class=" nav-link dropbtn-2"> Animation</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#Animation" class=" nav-link"> Animation</a>
+                    <div class="dropdown-content">
                         <!-- <a href="#">Syntax</a>
                         <a href="#">Examples  </a>
                         <a href="#">Accesibility concerns  </a>
@@ -774,10 +629,6 @@
                     </div>
                 </div>
                 </header>
-                
-
-
-            
             </nav>
             
         </div>

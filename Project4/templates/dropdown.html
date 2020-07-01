@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dropdown {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background-color:blueviolet;
+            width: 110px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .dropdown a {
+            /* position: absolute; */
+            text-decoration: none;
+            /* text-align: center; */
+        }
+
+        .dropdown-content {
+            display: none;
+            justify-content: center;
+            position: absolute;
+            top: 50px;
+            left: 75px;
+            background-color: cadetblue;
+            
+            width: auto;
+            height: auto;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 5px;
+            background-color:gainsboro;
+            
+        }
+
+        .dropdown:hover {background-color:cornflowerblue;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown-content a:hover {
+            background-color: gray;
+        }
+
+        Dropdown alignment
+            .dropdown-2 {
+        
+                text-align: center;
+                display: table;         /* Makes the div not larger than its contents */
+                margin: 0 auto;         /* Then centers that div */
+                width: auto;
+                margin-top: 35px;
+            }
+            /* Styling of the actual button to dropdown */
+            .dropbtn-2 {
+                background-color: hsl(213, 74%, 61%);
+                text-align: center;
+                border: none;
+                font-size: 18px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                color: black;
+            }
+            /* Styling of each box in dropdown */
+            .dropdown-content2 {
+                display: none;                            /* Hide the elements of dropdown*/
+                position: relative;
+                background-color: #f1f1f1;
+                width: 100%;
+                overflow: auto;
+                /* min-width: 100px; */
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            /* Syling of actual content inside the box (the subcategories) */
+            .dropdown-content2 a {
+                color: black;
+                padding: 2.5px;
+                /* padding: 12px 16px; */
+                text-decoration: none;
+                display: block;
+            }
+            /* Change color on hover */
+            .dropdown-content2 a:hover {background-color: #ddd;}
+            /* Display dropdown on hover */
+            .dropdown-2:hover .dropdown-content2 {display: block;}
+            /* Change color of button on hover */
+            .dropdown-2:hover .dropbtn-2 {background-color: hsl(213, 74%, 68%);}
+
+    </style>
+
+</head>
+<body>
+    <div class="dropdown">
+        <a href="#">Dropdown</a>
+        <div class="dropdown-content">
+            <a href="#">Hello</a> 
+            <a href="#">Bye</a>
+            <a href="#">Hello Again</a>
+        </div>
+    </div>
+</body>
+</html>

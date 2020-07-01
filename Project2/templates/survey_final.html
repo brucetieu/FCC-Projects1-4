@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <title>FITness</title>
+
+
+    <style>
+        body {
+            margin: 0px;
+        }
+        .img-bg {
+            /* position: absolute;
+            z-index: 0;             The image is last on the stack
+            opacity: .5;
+            height: auto;
+            max-width: 100%; */
+            position: fixed;      /* HAVE TO USED FIXED POSITIONING SO IMAGE STAYS ON SCREEN NO MATTER THE SIZE*/
+            /* display: flex; */
+            opacity: .9;
+            background-image: url("gym.jpg");
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .header-div {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin-top: 50px;
+            z-index: 1;             /* Header info is second on the stack */
+            color: black;
+        }
+
+/* form div 1 */
+        /* .form-div {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin-top: 250px;
+            background-color: whitesmoke;
+            color: black;
+            border: 1px;
+            opacity: 0.5;
+            z-index: 2;
+
+        } */
+
+        .form-div {
+            position: absolute;
+            left: 0;
+            right: 0;
+            
+            width: 750px;
+            max-width: 100%;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-top: 175px;
+            background-color: whitesmoke;
+            color: black;
+            border: 1px;
+            opacity: 0.5;
+            z-index: 2;             /* The form card is third on the stack */
+
+        }
+/* 
+        .content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            /* border: 1px black; */
+            /* background-color: black;
+            width: 500px;
+            height: 500px;
+            z-index: 3; */
+            
+        /* }  */
+
+        .more-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 750px;
+            max-width: 100%;
+            height: 500px;
+            text-align: center;
+            margin-top: 175px;
+            margin-left: auto;
+            margin-right: auto;
+            /* background-color: whitesmoke; */
+            overflow-y: scroll;
+            /* overflow: hidden; */
+            z-index: 3;                             /* Then there's a card identically placed over the card, except now
+                                                        it's the most recent on the stack so opacity doesn't overlap with the text*/
+            
+        }
+
+        form
+        {
+            /* Center the form */
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0px;
+            text-align: left;
+            max-width: 100%;
+            
+        }
+
+        .input-sty {
+
+            margin-top: 10px;    /* Spacing for top of input boxes from one another */   
+            margin-bottom: 15px; /* Spacing for bottom of input boxes from one another */
+            font-size: 18px;    
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width: 500px;        /* Width of input box */
+            max-width: 100%;
+        }
+
+        /* Label CSS styles */
+        .label-sty {
+            font-size: 18px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            max-width: 100%;
+        }
+
+        /* Font inside textbox */
+        #goals {
+            font-size: 18px;
+        }
+
+        /* Text box */
+        textarea {
+            padding: 10px;          /* How large the text box will be */
+            width: 500px;           /* How wide the text box is */
+            resize: none;           /* Don't allow user to resize the box*/
+            border-radius: 5px;     /* Make box corners more round */
+            margin-bottom: 40px;    /* Spacing from the next question */
+
+        }
+
+        h1 {
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        p {
+            font-size: 18px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        select {
+            font-size: 16px;
+        }
+
+        #submit {
+            font-size: 16px;
+        }
+
+        /* Resize the form when the screen is small */
+        @media (max-width: 600px) {
+            /* Make width of input box smaller */
+            .input-sty {
+            margin-top: 10px;    /* Spacing for top of input boxes from one another */   
+            margin-bottom: 15px; /* Spacing for bottom of input boxes from one another */
+            font-size: 18px;    
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            width: 250px;        /* Width of input box */
+            max-width: 100%;
+            }
+            /* Make text box smaller */
+            textarea {
+                padding: 10px;          /* How large the text box will be */
+                width: 250px;           /* How wide the text box is */
+                resize: none;           /* Don't allow user to resize the box*/
+                border-radius: 5px;     /* Make box corners more round */
+                margin-bottom: 40px;    /* Spacing from the next question */
+
+            }
+            /* Center form */
+            form
+            {
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 0px;
+                text-align: center;
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="outer-container">
+        <!-- Stack one: stack the header on top of the image -->
+        <div class="img-bg">hi</div>
+        <!-- <img class="img-bg" src="gym.JPG" alt="gym"> -->
+        <div class="header-div">
+            <h1 id="title">Welcome to FITness</h1>
+            <p id="description">Thanks for choosing us!</p>
+        </div>
+
+        <!-- Stack two: stack the form on top of the form card, which is opaque with the opaque img background -->
+        <div>
+            <div class="form-div"></div>
+            <div class="more-content">
+                
+                <form action="" id="survey-form">
+                    <h2>Step 1: Member Info </h2> <br>
+                 <label class="label-sty" for="name" id="name-label">Name:</label> <br>
+                 <input class="input-sty" type="text" id="name" placeholder="Enter your full name" required> <br>
+     
+                 <label class="label-sty" for="email" id="email-label">Email:</label> <br>
+                 <input class="input-sty" type="email" id="email" placeholder="Email Address" required> <br>
+     
+                 <label class="label-sty" for="pnumber" id="pnumber-label">Enter your main phone number (format: (###)-###-####):</label> <br>
+                 <input class="input-sty" type="tel" id="pnumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number" required> <br>
+                 
+     
+                 <label class="label-sty" for="birth-date" id="birth-date-label">Birth Date:</label> <br>
+                 <input class="input-sty" type="date" id="birth-date" min="1940-01-01" max="2025-01-01"> <br>
+     
+                 <label class="label-sty" for="address" id="address-label">Address:</label> <br>
+                 <input class="input-sty" type="text" id="address" placeholder="Address" required> <br>
+     
+                 <label class="label-sty" for="city" id="city-label">City:</label> <br>
+                 <input class="input-sty" type="text" id="city" placeholder="City" ><br>
+     
+     
+                 <label class="label-sty" for="state" id="state-label">State:</label> <br>
+                 <input class="input-sty" type="text" id="state" placeholder="State" ><br>
+     
+                 
+                 <label class="label-sty" for="number" id="number-label">Zip:</label> <br>
+                 <input class="input-sty" type="number" id="number" placeholder="Enter a five digit zipcode" min="10000" max="99999" required>
+     
+                 <h2>Step 2: Tell us a little bit about yourself</h2>
+                 <p>How many days out of the week do you exercise?</p>
+     
+                 <input type="radio" id="little" name="freq" value="zero">
+                 <label class="label-sty" for="zero" id="zero-label">0</label>
+     
+                 <input type="radio" id="little" name="freq" value="onethree" checked>
+                 <label class="label-sty" for="little" id="little-label">1-3</label>
+     
+                 <input type="radio" id="medium" name="freq" value="threefie">
+                 <label class="label-sty" for="medium" id="medium-label">3-5</label>
+     
+                 <input type="radio" id="high" name="freq" value="fivemore">
+                 <label class="label-sty" for="high" id="high-label">5+</label> <br><br><br>
+     
+                 <label class="label-sty" for="goals" id="goals"> What are your personal fitness goals?<label> <br> <br>
+                 <textarea id="goals" name="goals" rows="5" cols="33" autocapitalize maxlength="255" placeholder="Optional" 
+                 spellcheck="true"></textarea> <br>
+     
+                 <label for="dropdown" id="dropdown">How did you hear about us?</label><br>
+                 <select name="advert" id="dropdown" required>
+                     <option value="">--Please choose an option--</option>
+                     <option value="friend">Through a friend / family</option>
+                     <option value="google">Google search</option>
+                     <option value="tv">TV Advertisement</option>
+                     <option value="employer">My employer</option>
+                     <option value="media">Social media</option>
+                     <option value="other">Other</option>
+                 </select> <br><br>
+     
+                 <p>Is this your first gym?</p>
+                 <label for="yes" id="yes">Yes</label>
+                 <input type="checkbox" name="checkbox" value="yes">
+     
+                 <p>Receive promotional deals from FITness</p>
+                 <label for="yes" id="yes">Yes</label>
+                 <input type="checkbox" name="checkbox" value="yes">
+     
+     
+                 <p><input type="submit" id="submit" value="Sign Me Up!"></p>
+             
+                 </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

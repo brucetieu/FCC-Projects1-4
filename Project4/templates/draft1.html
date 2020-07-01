@@ -27,7 +27,7 @@
             .topic-selector {
                 position: fixed;
                 background-color: gainsboro; 
-                height: auto;
+                height: 100%;
                 width: 300px;
                 max-height: 100%;
                 overflow: scroll;
@@ -42,87 +42,99 @@
 
             /* Introduction Button */
             .dropdown-1 {
-                text-align: center;
+                /* display: block; */
+                font-size: 20px;
+                margin-left: auto;
+                margin-right: auto;
                 margin-top: 20px;
-            }
-            .dropbtn-1 {
                 background-color: hsl(213, 74%, 61%);
-                text-align: center;
-                border: none;
-                font-size: 18px;
-                padding: 10px 20px 10px 20px;
-                /* padding: 10px; */
-                text-decoration: none;
-                color: black;
-            }
-            .dropdown-1 .dropbtn-1:hover {background-color: hsl(213, 74%, 68%);}
-
-            /* Dropdown alignment */
-            .dropdown-2 {
-        
-                text-align: center;
-                display: table;         /* Makes the div not larger than its contents */
-                margin: 0 auto;         /* Then centers that div */
-                width: auto;
-                margin-top: 35px;
-            }
-            /* Styling of the actual button to dropdown */
-            .dropbtn-2 {
-                background-color: hsl(213, 74%, 61%);
-                text-align: center;
-                border: none;
-                font-size: 18px;
-                padding: 10px 20px 10px 20px;
-                text-decoration: none;
-                color: black;
-            }
-            /* Styling of each box in dropdown */
-            .dropdown-content2 {
-                display: none;                            /* Hide the elements of dropdown*/
-                position: relative;
-                background-color: #f1f1f1;
                 width: 100%;
-                overflow: auto;
-                /* min-width: 100px; */
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
+                line-height: 50px;
+                height: auto;
+                text-align: center;
             }
-            /* Syling of actual content inside the box (the subcategories) */
-            .dropdown-content2 a {
-                color: black;
-                padding: 2.5px;
-                /* padding: 12px 16px; */
+
+            .dropdown-1 a {
                 text-decoration: none;
+                color: black;
+            }
+
+            .dropdown-1:hover {background-color: hsl(213, 74%, 68%);}
+
+            .dropdown {
+            display: block;
+            font-size: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            background-color: hsl(213, 74%, 61%);
+            width: 100%;
+            line-height: 50px;
+            height: auto;
+            text-align: center;
+            }
+
+
+            .dropdown a {
+        
+                color: black;
+                text-decoration: none;
+
+            }
+
+            .dropdown-content {
+                display: none;
+                position: relative;
+                line-height: normal;
+                z-index: 2;
+                background-color: whitesmoke ;
+            }
+
+            .dropdown-content a {
                 display: block;
+                padding: 5px;
+                
             }
-            /* Change color on hover */
-            .dropdown-content2 a:hover {background-color: #ddd;}
-            /* Display dropdown on hover */
-            .dropdown-2:hover .dropdown-content2 {display: block;}
-            /* Change color of button on hover */
-            .dropdown-2:hover .dropbtn-2 {background-color: hsl(213, 74%, 68%);}
 
-            @media (max-width: 800px) {
-                .topic-selector {
-                    position: fixed;
-                    width: 100%;
-                    height: 50%;
-                    order: 1;
-                }
+            .dropdown:hover {background-color: hsl(213, 74%, 68%);}
 
-                .flex-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                }
-                .content-container {
-                    position: relative;
-                    text-align: center;   
-                    display: block;         /* Centers the div*/
-                    margin-left: auto;
-                    margin-right: auto;
-                    top: 400px;
-                }
+            .dropdown:hover .dropdown-content {display: block;}
+
+            .dropdown-content a:hover {
+                background-color: gray;
             }
+
+                @media (max-width: 800px) {
+                    .topic-selector {
+                        position: fixed;
+                        width: 100%;
+                        height: 50%;
+                        order: 1;
+                    }
+
+                    .flex-container {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    .content-container {
+                        position: relative;
+                        text-align: center;   
+                        display: block;         /* Centers the div*/
+                        margin-left: auto;
+                        margin-right: auto;
+                        top: 400px;
+                    }
+
+                    .dropdown {
+                        max-width: 100%;
+                        width: 75%;
+                    }
+
+                    .dropdown-1 {
+                        max-width: 100%;
+                        width: 75%;
+                    }
+                }
         </style>
     </head>
 
@@ -160,15 +172,18 @@
             </div>
             <!-- Div for the topic selector on the left -->
             <div class="topic-selector">
+                <!-- Title, called CSS reference -->
                 <h1 style="text-align: center;">CSS Reference</h1> <hr>
 
+                <!-- Introduction 'button' -->
                 <div class="dropdown-1">
                     <a href="#introduction" class="dropbtn-1"> Introduction</a> 
                 </div>
 
-                <div class="dropdown-2">
-                    <a href="syntax.html" class="dropbtn-2"> Syntax</a>
-                    <div class="dropdown-content2">
+
+                <div class="dropdown">
+                    <a href="syntax.html" class="dropdown-align"> Syntax</a>
+                    <div class="dropdown-content" id="override">
                         <a href="syntax.html#declaration">CSS declarations</a>
                         <a href="#">CSS declaration blocks</a>
                         <a href="#">CSS rulesets</a>
@@ -176,9 +191,9 @@
                     </div>
                 </div>
 
-                <div class="dropdown-2">
-                    <a href="#" class="dropbtn-2"> Specificity, Inheritance, Cascade</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#" class="dropdown-align"> Specificity, Inheritance, Cascade</a>
+                    <div class="dropdown-content">
                         <a href="#">Specificity</a>
                         <a href="#">Inheritance</a>
                         <a href="#">Cascade</a>
@@ -186,23 +201,23 @@
                 </div>
 
 
-                <div class="dropdown-2">
-                    <a href="#" class="dropbtn-2"> CSS Units and Values</a>
-                    <div class="dropdown-content2">
+                <div class="dropdown">
+                    <a href="#" class="dropbtn-align"> CSS Units and Values</a>
+                    <div class="dropdown-content">
                         <a href="#">Textual data types</a>
                         <a href="#">Numeric data types </a>
                         <a href="#">Specifications</a>
                     </div>
                 </div>
 
-                <div class="dropdown-2">
+                <!-- <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> Box model, margin collapse</a>
                     <div class="dropdown-content2">
                         <a href="#">Box model</a>
                         <a href="#">Margin collapse </a>
                     </div>
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> The Containing Block</a>
                     <div class="dropdown-content2">
@@ -211,16 +226,16 @@
                         <a href="#">Calculating percentages </a>
                         <a href="#">Some examples </a>
                     </div>
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> Stacking and block formatting</a>
                     <div class="dropdown-content2">
                         <a href="#">Stacking</a>
                         <a href="#">Block formatting</a>
                     </div>
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> Initial, computed, used, actual</a>
                     <div class="dropdown-content2">
@@ -229,9 +244,9 @@
                         <a href="#">Used value </a>
                         <a href="#">Actual value </a>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="dropdown-2">
+                <!-- <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> Shorthand properties</a>
                     <div class="dropdown-content2">
                         <a href="#">Tricky edge cases</a>
@@ -241,9 +256,9 @@
                         <a href="#">Margin and padding properties  </a>
                         <a href="#">Universal shorthand properties  </a>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="dropdown-2">
+                <!-- <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> CSS flex box layout</a>
                     <div class="dropdown-content2">
                         <a href="#">Basic example</a>
@@ -252,8 +267,8 @@
                         <a href="#">Specifications  </a>
                     </div>
                 </div>
-
-
+ -->
+<!-- 
                 <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> CSS grid layout</a>
                     <div class="dropdown-content2">
@@ -263,20 +278,20 @@
                         <a href="#">External Resources  </a>
                         <a href="#">Specifications  </a>
                     </div>
-                </div>
+                </div> -->
 
 
-                <div class="dropdown-2">
+                <!-- <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> Media queries</a>
                     <div class="dropdown-content2">
                         <a href="#">Reference</a>
                         <a href="#">Guides  </a>
                         <a href="#">Specifications  </a>
                     </div>
-                </div>
+                </div> -->
 
 
-                <div class="dropdown-2">
+                <!-- <div class="dropdown-2">
                     <a href="#" class="dropbtn-2"> Animation</a>
                     <div class="dropdown-content2">
                         <a href="#">Syntax</a>
@@ -286,13 +301,69 @@
                         <a href="#">Browser compatibility  </a>
                     </div>
                 </div>
-
-        
-
-
-            
-            </div>
-            
+            </div> -->
+             
         </div>
     </body>
 </html>
+
+.dropdown-1 {
+    text-align: center;
+    margin-top: 20px;
+}
+.dropbtn-1 {
+    background-color: hsl(213, 74%, 61%);
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    /* padding: 10px; */
+    text-decoration: none;
+    color: black;
+}
+.dropdown-1 .dropbtn-1:hover {background-color: hsl(213, 74%, 68%);}
+
+/* Dropdown alignment */
+.dropdown-2 {
+
+    text-align: center;
+    display: table;         /* Makes the div not larger than its contents */
+    margin: 0 auto;         /* Then centers that div */
+    width: auto;
+    margin-top: 35px;
+}
+/* Styling of the actual button to dropdown */
+.dropbtn-2 {
+    background-color: hsl(213, 74%, 61%);
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+/* Styling of each box in dropdown */
+.dropdown-content2 {
+    display: none;                            /* Hide the elements of dropdown*/
+    position: relative;
+    background-color: #f1f1f1;
+    width: 100%;
+    overflow: auto;
+    /* min-width: 100px; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Syling of actual content inside the box (the subcategories) */
+.dropdown-content2 a {
+    color: black;
+    padding: 2.5px;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: block;
+}
+/* Change color on hover */
+.dropdown-content2 a:hover {background-color: #ddd;}
+/* Display dropdown on hover */
+.dropdown-2:hover .dropdown-content2 {display: block;}
+/* Change color of button on hover */
+.dropdown-2:hover .dropbtn-2 {background-color: hsl(213, 74%, 68%);}

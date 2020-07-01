@@ -1,0 +1,250 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+p {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color:dodgerblue;
+}
+
+/* Create a flex container to contain the selector on the left, content on the right */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Fix the topic selector to the left */
+.topic-selector {
+    position: fixed;
+    background-color: gainsboro; 
+    height: 100%;
+    width: 350px;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+/* Styling for the content to the right */
+.content-container {   
+    margin-right: auto;
+    margin-left: 400px;
+    margin-right: 100px;
+    width: auto;
+    min-width: 300px;
+}
+
+.code-div {
+    background-color: gainsboro; 
+    padding: 10px;
+}
+
+code {
+    background-color: gainsboro;
+}
+
+.note-p {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.h1-sty {
+    font-size: 32px;
+}
+
+li {
+    font-size: 16px;
+}
+
+/* Introduction button */
+.dropdown-1 {
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: hsl(213, 74%, 61%);
+    width: 75%;
+    line-height: 50px;
+    height: auto;
+    text-align: center;
+}
+
+/* Hide the underline, make the font black */
+.dropdown-1 a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Hover on the button changes the color to the following */
+.dropdown-1:hover {background-color: hsl(213, 74%, 68%);}
+
+/* Buttons stylings for everything else except the intro (since these have subcategories) */
+.dropdown {
+display: block;
+font-size: 16px;
+margin-left: auto;                          /* Center the button */
+margin-right: auto;
+margin-top: 20px;                           /* Spacing between each button */
+background-color: hsl(213, 74%, 61%);     /* Color of the button */
+width: 75%;                                 /* Width of the button */
+line-height: 50px;                          /* Center text within button */
+height: auto;                               /* Automatically adjust height of button*/
+text-align: center;                         /* Center elements in button */
+}
+
+.dropdown a {
+    color: black;                         /* Change color to black */
+    text-decoration: none;                  /* Don't underline the a href */
+
+}
+
+/* Styling of the sub-categories of dropdown */
+.dropdown-content {
+    display: none;                          /* Don't show these subcategories */
+    position: relative;
+    line-height: normal;                    /* Have normal spacing between each subcategory */
+    z-index: 2;                             /* Make this appear first */
+    background-color: whitesmoke ;
+}
+
+/* Styling of each subcategory block */
+.dropdown-content a {                       
+    display: block;
+    padding: 5px; 
+}
+
+/* On hover, change the button to a certain color, show the subcategories, and change color
+of subcategory on hover  */
+.dropdown:hover {background-color: hsl(213, 74%, 68%);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown-content a:hover {
+    background-color: gray;
+}
+
+/* Make the page responsive horizontally */
+@media (max-width: 800px){
+    /* Collapse containers from rows to columns */
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .topic-selector {
+        position: absolute;
+        display: block;
+        width: 100%;
+        max-height: 50%;
+        order: 1;
+    }
+
+    .content-container {
+        position: relative;     
+        text-align: left;
+        width: 100%; 
+        display: block;         /* Centers the div*/
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 375px;
+    }
+
+    /* Adjust down widths of button when window is small */
+    .dropdown {
+        max-width: 100%;
+        width: 65%;
+    }
+
+    .dropdown-1 {
+        max-width: 100%;
+        width: 65%;
+    }
+}
+
+/* Responsiveness when height and width are BOTH small */
+/* Adjust the margin-top each time the window is resized */
+@media (max-height: 700px) and (max-width: 800px) {
+
+    .content-container {
+        position: relative;
+        text-align: left;
+        width: 100%; 
+        /* height: 2px;   */
+        display: block;         /* Centers the div*/
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 325px;
+        padding-top: 0;
+        /* order: 2; */
+    }
+}
+
+@media (max-height: 600px) and (max-width: 800px) {
+
+.content-container {
+    position: relative;
+    text-align: left;
+    width: 100%; 
+    display: block;         /* Centers the div*/
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 275px;
+    padding-top: 0;
+    /* order: 2; */
+ }
+}
+
+@media (max-height: 500px) and (max-width: 800px) {
+
+.content-container {
+    position: relative;
+    text-align: left;
+    width: 100%; 
+    display: block;         /* Centers the div*/
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 225px;
+    padding-top: 0;
+    }
+}
+
+@media (max-height: 400px) and (max-width: 800px) {
+.content-container {
+    position: relative;
+    text-align: left;
+    width: 100%; 
+    display: block;         /* Centers the div*/
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 175px;
+    padding-top: 0;
+    }
+}
+@media (max-height: 300px) and (max-width: 800px) {
+.content-container {
+    position: relative;
+    text-align: left;
+    width: 100%; 
+    display: block;         /* Centers the div*/
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 125px;
+    padding-top: 0;
+    }
+}
+@media (max-height: 200px) and (max-width: 800px) {
+.content-container {
+    position: relative;
+    text-align: left;
+    width: 100%; 
+    display: block;         /* Centers the div*/
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 75px;
+    padding-top: 0;
+}
+}

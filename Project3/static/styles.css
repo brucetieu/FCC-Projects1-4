@@ -1,0 +1,232 @@
+  /* Make all content within the body completely flush against the page */
+  body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #D3C5C9;
+} 
+
+/* <nav> CSS */
+#nav-bar {
+    position: fixed;            /* Nav bar always at top */
+    top: 0px;
+    left: 0px;
+    width: 100%;                /* Nav bar as wide as can be */
+    background: gainsboro;
+    display: flex;              /* Place elements in a flex container*/
+    align-items: center;        /* Make it center horizontally */
+    flex-direction: row;        /* flex container aligned in rows */                    
+    flex-wrap: wrap;            /* flex items break into multiple lines */
+
+}
+
+/* Class to allow spacing between divs */
+div.div-spacing {
+    margin: 15px;
+}
+
+
+/* Logo */
+#company {
+    font-size: 28px;
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+/* Navbar element 1 */
+#features {
+    margin-left: auto;    /* Put on right side of navbar*/
+    font-size: 20px;
+}
+
+/* Navbar element 2 */
+#pricing {
+    font-size: 20px;
+}
+
+/* Navbar element 3 */
+#howto {
+    font-size: 20px;
+    /* margin-right: 20px; */
+}
+
+/* Make elements grow on hover with transform: scale() */
+.div-spacing:hover {
+    transform: scale(1.1);
+}
+
+#form-info {
+    margin-top: 100px;
+}
+
+/* Styling of the input box */
+.input-sty {
+    background-color: hsl(36, 100%, 57%);
+    margin-top: 15px;
+    padding: 5px;  
+    width: 25%;
+    max-width: 100%;  
+    text-align: center;
+}
+
+/* Styling of the features of the product */
+.feature-div {
+    /* position: relative;
+    top: 100px; */
+    display: flex;
+    align-items: center;        /* center items within flex container */
+    flex-direction: row;        /* items place in a row */
+    flex-wrap: wrap;            /* wrap onto multiple lines if too wide */
+    justify-content: center;    /* center flex container within browser */
+    margin: 50px;               /* spacing between each flex container */
+    text-align: center;
+    /* max-width: 100%; */
+}
+
+/* .alignment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+/* Putting products in a flex container */
+.outer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Titles of each card */
+.item-div {
+    background-color: #98777b;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Description of each feature (for the water droplet) */
+div.override {
+    text-align: left;
+    margin: 10px;
+    width: 50%;
+}
+
+/* Align all text to be centered in the div */
+.video-div {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Width of the video */
+#video {
+    max-width: 100%;
+}
+
+/* Create the card which stores each shoe */
+.card {
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px 1px lightsteelblue;
+    margin: 10px;
+    width: 300px;
+    height: 350px;
+    /* padding: 150px; */
+}
+
+/* Remove the underline from the hyperlink */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.hover:hover {
+    animation-name: background-colored;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    transform: scale(1.1);
+}
+@keyframes background-colored {
+    100% {
+        background-color: hsl(166, 62%, 64%);
+    }
+}
+
+#submit:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    transform: scale(1.1);
+}
+@keyframes background-color {
+    100% {
+        background-color: hsl(48, 78%, 51%);
+    }
+}
+/* When screen is less than 600 pixels, apply these styles to make everything fit on screen  */
+@media(max-width: 600px) {
+    /* Nav bar elements should stack on top of each other via flex-wrap: wrap */
+    .div-spacing {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+    /* order: sets the order to lay out an item in a flex or grid container. 1 comes first. */
+
+    /* Icon image */
+    #icon-div {
+        order: 1;
+        margin-top: 10px;       
+    }
+    /* Company link */
+    #company {
+        order: 2;
+        margin-top: -10px;      /* Negative element is added so that the droplet 
+                                is closer to the text*/
+    /* Feature link */
+    }
+    #features {
+        order: 3;
+        margin-top: -10px;
+    }
+    /* Pricing link */
+    #pricing {
+        order: 4;
+        margin-top: -10px;
+    }
+    /* How It Works link */
+    #howto {
+        order: 5;
+        margin-top: -10px;
+    }
+
+    /* Water droplet icon */
+    #drip {
+        order: 1;
+    } 
+
+    /* Resize GET STARTED button when page gets too small */
+    #submit {
+        width: auto;
+        max-width: 100%;
+    }
+    /* .feature-div {
+        margin: 0;
+    } */
+
+    /* The text next to each water droplet */
+    div.override {
+        order: 2;
+        text-align: center;
+        margin-top: -150px;
+        
+    }
+    /* #form-info {
+        margin-top: 100px;
+    } */
+
+    /* The header is 200px away from the top of the page */
+    h2 {
+        margin-top: 150px;
+    }
+    /* The main header shows up when page is small */
+    h1 {
+        margin-top: 250px;
+    }
+} 

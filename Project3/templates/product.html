@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <title>&#128046 Deadstock Drip</title>
+</head>
+
+<body>
+    <!-- Create the nav-bar which goes inside the header tag -->
+    <header id="header">
+        <!-- <h2>Insert catchy motto here.</h2> -->
+        <nav id="nav-bar">
+            <!-- text-decoration: none: remove the underline from the link
+                color: inherit: inherit the color of the parent element, which is black -->
+                <!-- div for the icon -->
+            <div class="div-spacing" id="icon-div">
+                <!-- <span style="font-size: 300%;">&#128046;</span> -->
+                <img id="header-img" src="/static/cow.jpg" alt="icon" width="55" height="55">
+            </div>
+
+            <!-- Container for "company" nav link -->
+            <div class="div-spacing" id="company">
+                <a class="nav-link" href="#form" style="text-decoration: none; color: #484848;">Deadstock Drip</a> 
+            </div>
+            
+            <!-- Container for "features" nav link -->
+            <div class="div-spacing" id="features">
+                <a class="nav-link" href="#drip" style="text-decoration: none; color: #484848;">Features</a> 
+            </div>
+
+            <!-- Container for "pricing" nav-link -->
+            <div class="div-spacing" id="pricing">
+                <a class="nav-link" href="#prices" style="text-decoration: none; color: #484848;">Pricing</a> 
+            </div>
+
+            <!-- Container for "pricing" nav-link -->
+            <div class="div-spacing" id="howto">
+                <a class="nav-link" href="#video" style="text-decoration: none; color: #484848;">Concept</a>  
+            </div> 
+        </nav>
+
+        <!-- Email inside a container -->
+        <div id="form-info" style="text-align: center;">
+            <h1 style="font-size: 36px; font-family:Georgia, 'Times New Roman', Times, serif;">Stylish streetwear that makes you feel good.</h1>
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                <input style="font-size: 18px;" id="email" type="email" name="email" placeholder="Email Address" required><br>
+                <input style="font-size: 20px; max-width: 100%;" id="submit" class="input-sty" type="submit" value="GET STARTED">
+            </form>
+        </div>
+
+        <!-- Details about the product -->
+        <!-- Water droplet 1 -->
+        <div class="feature-div">
+            <div><img style="margin-right: 20px;" id="drip" src="/static/water.png" alt="drip" width="120" height="120"></div>
+            <div class="override">
+            <h2> Achieve the highest of drip with high quality materials </h2> 
+            <p style="margin-top: -15px; font-size: 18px;">All products are made with non-gildan materials</p>
+            </div>
+        </div>
+
+        <!-- Water droplet 2 -->
+        <div class="feature-div">
+            <div><img style="margin-right: 20px;" id="comfort" src="/static/deadstock.jpg" alt="drip" width="120" height="120"></div>
+            <div class="override">
+            <h2> Flex on your friends and family with deadstock clothes </h2> 
+            <p style="margin-top: -15px; font-size: 18px">"You didn't ask, but I just wanted to tell you that these shoes are deadstock!" </p>
+            </div>
+        </div>
+
+        <!-- Water droplet 3 -->
+        <div class="feature-div">
+            <div><img style="margin-right: 20px;" id="return" src="/static/refund.jpg" alt="drip" width="120" height="120"></div>
+            <div class="override">
+            <h2> Money back guarantee  </h2> 
+            <p style="margin-top: -15px; font-size: 18px">Not enough style for you? Return within 30 days for 100% of your money back (This will rarely happen).</p>
+            </div>
+        </div>
+
+
+        <!-- Video of the product -->
+        <div class="video-div">
+            <iframe id="video" allowfullscreen height="400" width="500" src="https://www.youtube.com/embed/h05HWNThXpY"></iframe>
+        </div>
+
+        <!-- Three shoes arranged in a row -->
+        <div class="outer" id="prices">
+
+            <div class="card">
+                <div class="item-div">
+                    <h3>CHUNKY DUNKY SB'S</h3>
+                </div>
+                <img style="margin-left: auto; margin-right: auto; display: block;" src="/static/chunky.jpg" alt="chunky" width="300" height="200">
+                <a class="hover" href="https://stockx.com/nike-sb-dunk-low-ben-jerrys-chunky-dunky" target="_blank"
+                     style="text-align: center; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; width: 150px; height: 25px; background-color:hsl(148, 64%, 70%); border-radius: 5px; font-size: 18px;">BUY: $1800</a>
+            </div>
+
+            <div class="card">
+                <div class="item-div">
+                    <h3>NIKE SACAI</h3>
+                </div>
+                <img style="margin-left: auto; margin-right: auto; display: block;" src="/static/sacai.jpg" alt="sacai" width="300" height="200">
+                <a class="hover" href="https://stockx.com/search/sneakers?s=nike%20ld%20waffle" target="_blank"
+                     style="text-align: center; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; width: 150px; height: 25px; background-color:hsl(148, 64%, 70%); border-radius: 5px; font-size: 18px;">BUY: $500</a>
+            </div>
+
+            <div class="card">
+                <div class="item-div">
+                    <h3>NIKE SB TRAVIS SCOTT</h3>
+                </div>
+                <img style="margin-left: auto; margin-right: auto; display: block;" src="/static/travis.jpg" alt="sacai" width="300" height="200">
+                <a class="hover" href="https://stockx.com/nike-sb-dunk-low-travis-scott" target="_blank"
+                style="text-align: center; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; width: 150px; height: 25px; background-color:hsl(148, 64%, 70%); border-radius: 5px; font-size: 18px;">BUY: $1500</a>
+            </div>
+        </div>
+    </header>
+
+    <script src="//cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
